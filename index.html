@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="monchacos">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Monchacos.com</title>
+        <!-- Hi There!  Monchacos Web Page made using Angular JS and Drupal webservices. -->
+        <!-- CSS FILES -->
+            <!-- This is twitter Bootstrap -->
+            <link href="css/bootstrap.css" rel="stylesheet">
+            <link href="css/bootstrap-responsive.css" rel="stylesheet">
+            <!-- There the page styles -->
+            <link href="css/styles.css" rel="stylesheet">
+        
+        <!-- JS Files -->
+            <!-- This is Jquery -->
+            <script type="text/javascript" src="js/libs/jquery-1.9.1.min.js"></script>  
+            <!-- This is twitter Bootstrap -->            
+            <script type="text/javascript" src="js/bootstrap.js"></script>        
+            <!-- More at bottom of page  -->
+    </head>
+    <body>
+        <div class="container">
+            <!-- Personal Data -->
+            <section id="personaldata"  class="row">
+                <div class="span4">Here photo</div>
+                <div class="span8">here data and menus</div>
+            </section>
+            <!-- Menu -->
+            <section id="menu" class="row">
+                <ul id="menu-list">
+                    <li>
+                        <a ng-class="{selected: location.path() == '/'} " href="#/">Blog</a>
+                    </li>
+                    <li>
+                        <a ng-class="{selected: location.path() == '/active'}" href="#/active">Experiments</a>
+                    </li>
+                    <li>
+                        <a  href="#/completed">GitHub</a>
+                    </li>
+                </ul>
+            </section>
+            <!-- Articles -->
+            <section id="articles" ng-controller="blogCtrl" class="row">
+                <div class="span12">
+                    <ul id="articles-list" ">
+                        {{articles.length}}
+                        <li ng-repeat="article in articles" class="span4"  ng-cloak >
+                            <div class="view">
+                                <label ng-dblclick="readArticle(article)">{{article.node_title}}</label>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </body>
+    <!-- Loading our app at the end of the page, like a boss -->
+    <!-- I need to include Require.js -->
+    <script src="js/libs/angular/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/monchacosCtrl.js"></script>
+    <script src="js/services/monchacosStorage.js"></script>
+    <!--<script src="js/directives/todoFocus.js"></script>
+    <script src="js/directives/todoBlur.js"></script>-->
+</html>
