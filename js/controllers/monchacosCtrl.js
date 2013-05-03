@@ -5,35 +5,46 @@
  * - retrieves and persist the model via the todoStorage service
  * - exposes the model to the template and provides event handlers
  */
-monchacos.controller( 'blogCtrl', function blogCtrl( $scope, $location, monchacosStorage, filterFilter, $http ) {
+ function blogCtrl( $scope, $location, monchacosStorage, filterFilter, $http ) {
     var articles = $scope.articles = [];
-    
-    var blogPath = 'jsonBlog.json';
-    $http.get(blogPath).then(function(response) {
-                $scope.articles = response.data;
-            });
-   
-    
 
+    //Asyncronous call to a service. Using Angular JS promises
+    var promise = monchacosStorage.getBlog();
+    promise.then(function(data) {
+      $scope.articles = data;
+    }, function(reason) {
+      $scope.articles = data;
+    });
+    
     $scope.$watch('articles', function() {});
 
+    $scope.opened = false;
+    
+    $scope.readArticle = function( article ) {
+        //$scope.articleReaded = article;
+        $scope.opened = true;
+        var promise = monchacosStorage.getNode(article.nid);
+            promise.then(function(data) {
+            $scope.node = data;
+        }, function(reason) {
+            $scope.node = null;
+        });
+    };
 
-  if ( $location.path() === '' ) $location.path('/');
-  $scope.location = $location;
+    $scope.closeArticle = function(){
+        $scope.opened = false;
+        if($scope.node){
+            $scope.node = null;
+        }
+    }
 
-  $scope.$watch( 'location.path()', function( path ) {
-    /*$scope.statusFilter = (path == '/active') ?
-      { completed: false } : (path == '/completed') ?
-        { completed: true } : null;*/
-  });
+}
 
 
+/**
+ * The controller for the article detail 
+ * 
+ **/
+ function articleCtrl(){
  
-
-  $scope.readArticle = function( article ) {
-    //$scope.articleReaded = article;
-  };
-
-
-
-});
+ }

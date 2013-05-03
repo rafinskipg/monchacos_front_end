@@ -1,0 +1,12 @@
+﻿<div class="span12" id="articles">
+    <div class="row">{{articles.length}} articles published</div>
+    <ul id="articles-list" ng-cloak class="row">
+        <li ng-repeat="article in articles" class="span4" >
+            <div class="article" ng-click="readArticle(article)">{{article.node_title}}</div>
+        </li>
+    </ul>
+    <div ng-cloak ng-show="node" ng-class="{closed: !opened, opened: opened}" class="detail-article">
+     {{node.title}}
+       <div ng-click="closeArticle()">CLOSE</div>
+    </div>
+</div>

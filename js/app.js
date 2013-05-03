@@ -2,29 +2,27 @@
 
 /**
  * The main Monchacos app module.
- *
+ * See more documentation on "Thinking the Angular Way" http://stackoverflow.com/questions/14994391/how-do-i-think-in-angularjs-if-i-have-a-jquery-background
+ * See more documentation on Angular JS for big apps http://briantford.com/blog/huuuuuge-angular-apps.html
  * @type {angular.Module}
  */
-var monchacos = angular.module('monchacos', []);
-
-/*var monchacos = angular.module('monchacos', [], function($routeProvider, $locationProvider) {
-  $routeProvider.when('/article/:nid', {
-    templateUrl: 'node.html',
-    controller: articleCtrl,
-    resolve: {
-      // I will cause a 1 second delay
-      delay: function($q, $timeout) {
-        var delay = $q.defer();
-        $timeout(delay.resolve, 1000);
-        return delay.promise;
-      }
-    }
-  });
-  $routeProvider.when('/blog', {
-    templateUrl: 'blog.html',
-    controller: blogCtrl
-  });
+//See more documentatioin on Angular JS route http://docs.angularjs.org/api/ng.$route
+var monchacos = angular.module('monchacos', [], function($routeProvider, $locationProvider) {
+   /* $routeProvider.when('/article/:nid', {
+        templateUrl: 'templates/node.html',
+        controller: articleCtrl
+    });*/
+    $routeProvider.when('/blog', {
+        templateUrl: 'templates/blog.html',
+        controller: blogCtrl
+    });
+    $routeProvider.when('/', {
+        templateUrl: 'templates/blog.html',
+        controller: blogCtrl
+    });
  
-  // configure html5 to get links working on jsfiddle
-  $locationProvider.html5Mode(true);
-});*/
+  //configure html5 to get links working on jsfiddle
+  //$locationProvider.html5Mode(true);
+  // See more about html5 mode and $location at http://docs.angularjs.org/guide/dev_guide.services.$location
+  // See more on locationProvider at http://docs.angularjs.org/api/ng.$locationProvider
+});

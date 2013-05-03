@@ -17,6 +17,9 @@
             <!-- This is twitter Bootstrap -->            
             <script type="text/javascript" src="js/bootstrap.js"></script>        
             <!-- More at bottom of page  -->
+            
+        <!-- Template files -->
+       
     </head>
     <body>
         <div class="container">
@@ -29,30 +32,14 @@
             <section id="menu" class="row">
                 <ul id="menu-list">
                     <li>
-                        <a ng-class="{selected: location.path() == '/'} " href="#/">Blog</a>
+                        <a when-active href="#/blog">Blog</a>
                     </li>
-                    <li>
-                        <a ng-class="{selected: location.path() == '/active'}" href="#/active">Experiments</a>
-                    </li>
-                    <li>
-                        <a  href="#/completed">GitHub</a>
-                    </li>
+                    
                 </ul>
             </section>
-            <!-- Articles -->
-            <section id="articles" ng-controller="blogCtrl" class="row">
-                <div class="span12">
-                    <ul id="articles-list" ">
-                        {{articles.length}}
-                        <li ng-repeat="article in articles" class="span4"  ng-cloak >
-                            <div class="view">
-                                <label ng-dblclick="readArticle(article)">{{article.node_title}}</label>
-                            </div>
-                            
-                        </li>
-                    </ul>
-                </div>
-            </section>
+            <!-- Main section-->
+            <section id="main"><div ng-view class="row"></div></section>
+
         </div>
     </body>
     <!-- Loading our app at the end of the page, like a boss -->
@@ -61,6 +48,11 @@
     <script src="js/app.js"></script>
     <script src="js/controllers/monchacosCtrl.js"></script>
     <script src="js/services/monchacosStorage.js"></script>
+    <script src="js/directives/monchacosActive.js"></script>
     <!--<script src="js/directives/todoFocus.js"></script>
     <script src="js/directives/todoBlur.js"></script>-->
+    
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 </html>

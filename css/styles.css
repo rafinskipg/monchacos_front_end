@@ -1,4 +1,33 @@
 body{
     background-color: black;
     color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.3em;
+}
+section {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* Menu */
+#menu{
+   
+}
+#menu ul{
+    list-style: none;  
+}
+
+/* Articles Module */
+#articles ul {
+    list-style: none;
+}
+
+#articles-list .article{
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    margin: 5px;
+    padding: 10px;
+    font-size: 1.5em;
+    word-break: break-word;
+    line-height: 1em;
+    text-transform: uppercase;
+    font-family: 'Dosis', sans-serif;
 }
