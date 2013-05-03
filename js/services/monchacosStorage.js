@@ -5,11 +5,11 @@
  * See the Angular JS Docs http://docs.angularjs.org/guide/dev_guide.services.creating_services
  */
 monchacos.factory( 'monchacosStorage', function($http, $q) {
-    //var blogPath = 'http://www.monchacos.com/monchacos/rest/blog';
-    //var nodePath = 'http://www.monchacos.com/monchacos/rest/node';  
+    var blogPath = 'http://www.monchacos.com/monchacos/rest/blog';
+    var nodePath = 'http://www.monchacos.com/monchacos/rest/node';  
     
-    var blogPath = 'jsonBlog.json';
-    var nodePath = 'jsonNode.json';
+    //var blogPath = 'jsonBlog.json';
+    //var nodePath = 'jsonNode.json';
 
     return {
         getBlog: function() {
@@ -24,7 +24,7 @@ monchacos.factory( 'monchacosStorage', function($http, $q) {
         getNode: function(nid){
             var deferred = $q.defer();
             //Some documentation over http and success fail callbacks http://docs.angularjs.org/api/ng.$http
-            $http.get(nodePath).then(function(response) {
+            $http.get(nodePath+'/'+nid).then(function(response) {
                  deferred.resolve(response.data);
             },function(response){ deferred.reject([]);});
             return deferred.promise;
