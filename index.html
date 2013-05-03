@@ -25,21 +25,49 @@
         <div class="container">
             <!-- Personal Data -->
             <section id="personaldata"  class="row">
-                <div class="span4">Here photo</div>
-                <div class="span8">here data and menus</div>
+                <!--<div class="span2"><img src="img/rafael.jpg"/></div>-->
+                <div class="span12">
+                    <div class="row">
+                        <div class="span12">
+                            <h1>Rafael Pedrola</h1>
+                        </div>
+                    </div>
+                    <ul class="follow row">
+                        <li class="span2">
+                            <a href="https://github.com/rafinskipg">Github</a>
+                        </li>
+                        <li class="span2">
+                             <a href="http://drupal.org/user/856336">Drupal.org</a>
+                        </li>
+                        <li class="span2">
+                            <a href="http://es.linkedin.com/pub/rafael-pedrola-gimeno/37/788/226">LinkedIn</a>
+                        </li>
+                        <li class="span2">
+                            <a href="https://twitter.com/rafinskipg">Twitter</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </div>
             </section>
             <!-- Menu -->
-            <section id="menu" class="row">
+            <!--<section id="menu" class="row">
                 <ul id="menu-list">
-                    <li>
+                    <li class="span1">
                         <a when-active href="#/blog">Blog</a>
                     </li>
-                    
                 </ul>
-            </section>
+            </section>-->
             <!-- Main section-->
             <section id="main"><div ng-view class="row"></div></section>
-
+            
+            <!-- About section -->
+            <section id="about" class="row">
+                <div class="span12">This site was made using:</div>
+                <div class="span1 made drupal"></div>
+                <div class="span1 made angular"></div>
+                <div class="span1 made html5"></div>
+            </section>
         </div>
     </body>
     <!-- Loading our app at the end of the page, like a boss -->

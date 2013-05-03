@@ -8,6 +8,37 @@ section {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+a:hover {
+    text-decoration: none;
+}
+/* Personal Data */
+#personaldata {
+    margin-bottom: 20px;
+}
+#personaldata .follow{
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+#personaldata a {
+    color: white;
+    cursor: pointer;
+}
+#personaldata ul{
+    list-style: none;
+}
+#personaldata li{
+    padding: 10px;
+     -webkit-transition: all .25s linear;
+     -moz-transition: all .25s linear;
+       -o-transition: all .25s linear;
+          transition: all .25s linear;
+}
+#personaldata li:hover{
+    background-color: white; 
+}
+#personaldata li:hover a{
+    color:black; 
+}
 /* Menu */
 #menu{
    
@@ -15,8 +46,22 @@ section {
 #menu ul{
     list-style: none;  
 }
+#menu a{
+    color:white; 
+}
 
 /* Articles Module */
+#articles .count{
+    margin-bottom: 15px;
+}
+#articles .count .number{
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: red;
+    color: white;
+    padding: 5px;
+}
 #articles ul {
     list-style: none;
 }
@@ -30,4 +75,67 @@ section {
     line-height: 1em;
     text-transform: uppercase;
     font-family: 'Dosis', sans-serif;
+    cursor: pointer;
+    
+    -webkit-transition: all .25s linear;
+     -moz-transition: all .25s linear;
+       -o-transition: all .25s linear;
+          transition: all .25s linear;
+}
+
+#articles-list .article:hover{
+    background-color: white;
+    color: black;
+    
+    
+}
+#articles #detail-article{
+   
+    background-color: white;
+    color: black;
+    left: 0;
+   
+}
+
+#articles #detail-article .close{
+    color: white;
+    background-color: red;
+    border-radius : 5px;
+    -moz-border-radius : 5px;
+    -webkit-border-radius : 5px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#articles #detail-article.opened{
+    opacity: 1;
+}
+
+.close:hover{
+opacity: 0.4 !important;
+}
+#myModal{
+    color:black;
+}
+
+
+/*About */
+#about{
+    font-size: 0.8em;
+    font-family: 'Dosis', sans-serif;
+}
+#about .made{
+    background-size: contain;
+    height: 50px;
+    background-repeat: no-repeat;
+    margin-top: 15px;
+}
+#about .drupal{
+    background-image: url('../img/drupal.png');
+}
+#about .angular{
+    background-image:  url('../img/angular.png');
+}
+#about .html5{
+    background-image:  url('../img/HTML5-Logo.png');
 }

@@ -8,10 +8,7 @@
  */
 //See more documentatioin on Angular JS route http://docs.angularjs.org/api/ng.$route
 var monchacos = angular.module('monchacos', [], function($routeProvider, $locationProvider) {
-   /* $routeProvider.when('/article/:nid', {
-        templateUrl: 'templates/node.html',
-        controller: articleCtrl
-    });*/
+   
     $routeProvider.when('/blog', {
         templateUrl: 'templates/blog.html',
         controller: blogCtrl

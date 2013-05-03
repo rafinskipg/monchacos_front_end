@@ -25,7 +25,10 @@
         $scope.opened = true;
         var promise = monchacosStorage.getNode(article.nid);
             promise.then(function(data) {
+            
+            data.body = data.body.und[0].safe_value;
             $scope.node = data;
+            
         }, function(reason) {
             $scope.node = null;
         });
