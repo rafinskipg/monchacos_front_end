@@ -42,12 +42,3 @@
     }
 
 }
-
-
-/**
- * The controller for the article detail 
- * 
- **/
- function articleCtrl(){
- 
- }
