@@ -20,6 +20,7 @@ Here you have a kick start of the first resources you will find helpfull.
 * [TodoMVC - Comparision with other implementations](https://github.com/angular/angular-seed)
 * [AngularJS Meetup by the author of Angular JS](https://www.youtube.com/watch?v=ZhfUv0spHCY)
 * [Ng Modules](http://ngmodules.org/)
+* [EggHead Video Tutorials](http://www.egghead.io/)
     
 
 ## Task List
