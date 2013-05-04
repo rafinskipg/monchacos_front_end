@@ -8,6 +8,8 @@ After setting up the REST API I coded the front end and had some fun with Angula
 
 You can find documented code along the project and links to the original pieces of information that are on the internet.
 
+[See demo project](http://www.monchacos.com)
+
 Here you have a kick start of the first resources you will find helpfull.
 
 ### Resources
