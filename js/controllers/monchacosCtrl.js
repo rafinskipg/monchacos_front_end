@@ -2,8 +2,10 @@
 
 /**
  * The main controller for the app. The controller:
- * - retrieves and persist the model via the todoStorage service
+ * - retrieves the model via a Service
  * - exposes the model to the template and provides event handlers
+ * The controllers are not Models, they just link the data in the model and expose it to the View
+ * { Tip of the day !} - Controllers should be "Write only", while views should be "Read Only"
  */
  function blogCtrl( $scope, $location, monchacosStorage, filterFilter, $http ) {
     var articles = $scope.articles = [];
@@ -16,6 +18,8 @@
       $scope.articles = data;
     });
     
+    // Watch directives are fired many times. You can use them to execute FAST pieces of code that evaluates some changes on the element.
+    // Dont use SLOW pieces of code in a wath sentence (or counters) as they may slow your  site.
     $scope.$watch('articles', function() {});
 
     $scope.opened = false;

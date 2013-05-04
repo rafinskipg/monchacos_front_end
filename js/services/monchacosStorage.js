@@ -2,6 +2,8 @@
 
 /**
  * Services that gets nodes from Drupal
+ * Services are the place where you can create code that has to be used in many controllers. 
+ * { Tip of the day !} - Also is the place to use data that has to be shared between controllers. 
  * See the Angular JS Docs http://docs.angularjs.org/guide/dev_guide.services.creating_services
  */
 monchacos.factory( 'monchacosStorage', function($http, $q) {
