@@ -21,6 +21,8 @@ Here you have a kick start of the first resources you will find helpfull.
 * [AngularJS Meetup by the author of Angular JS](https://www.youtube.com/watch?v=ZhfUv0spHCY)
 * [Ng Modules](http://ngmodules.org/)
 * [EggHead Video Tutorials](http://www.egghead.io/)
+* [Angular JS Animations!](http://www.youtube.com/watch?feature=player_embedded&v=cF_JsA9KsDM)
+* [Angular Vs Backbone - Opinion * ](http://www.nebithi.com/2012/12/27/backbone-and-angular-demystifying-the-myths/)
     
 
 ## Task List
