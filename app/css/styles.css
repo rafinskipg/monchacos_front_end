@@ -58,6 +58,23 @@ section .menu li:hover a{
     font-size: 2.4em;
 }
 /* Articles Module */
+#articles{
+    opacity: 0;
+     -webkit-animation-duration: 2s;
+           -moz-animation-duration: 2s;
+             -o-animation-duration: 2s;
+                animation-duration: 2s;
+        -webkit-animation-fill-mode: both;
+           -moz-animation-fill-mode: both;
+             -o-animation-fill-mode: both;
+                animation-fill-mode: both;
+}
+#articles.visi{
+    -webkit-animation-name: showBig;
+    -moz-animation-name: showBig;
+    -o-animation-name: showBig;
+    animation-name: showBig;
+}
 #articles .count{
     margin-bottom: 15px;
     width:200px; 
@@ -153,7 +170,159 @@ opacity: 0.4 !important;
     text-shadow: #fff 0 0 4px;
     font-size: 5em;
 }
+.loader{
+    height: 100px;   
+    width: 100px;
+    opacity: 1;
+    margin-left: 50%;
+    background: url('../img/ajax-loader2.gif');
+    background-size: 100px;
+        -webkit-animation-duration: 2s;
+           -moz-animation-duration: 2s;
+             -o-animation-duration: 2s;
+                animation-duration: 2s;
+        -webkit-animation-fill-mode: both;
+           -moz-animation-fill-mode: both;
+             -o-animation-fill-mode: both;
+                animation-fill-mode: both;
+}
+.loader.invi{
+    -webkit-animation-name: hideSmall;
+    -moz-animation-name: hideSmall;
+    -o-animation-name: hideSmall;
+    animation-name: hideSmall;
+}
+@-webkit-keyframes hideSmall {
+        0% {
+                opacity: 1;  
+        }        
+       50%{
+            opacity:0;
+            height: 100px;
+            width: 100px;
+        }
+        100% {
+            opacity:0;
+               height: 0px;
+               width: 0px;
+        }
+}
 
+@-moz-keyframes hideSmall {
+        0% {
+                opacity: 1;  
+        }        
+       50%{
+            opacity:0;
+            height: 100px;
+            width: 100px;
+        }
+        100% {
+            opacity:0;
+               height: 0px;
+               width: 0px;
+        }
+}
+@-o-keyframes hideSmall {
+        0% {
+                opacity: 1;  
+        }        
+       50%{
+            opacity:0;
+            height: 100px;
+            width: 100px;
+        }
+        100% {
+            opacity:0;
+               height: 0px;
+               width: 0px;
+        }
+}
+@keyframes hideSmall {
+        0% {
+                opacity: 1;  
+        }        
+       50%{
+            opacity:0;
+            height: 100px;
+            width: 100px;
+        }
+        100% {
+            opacity:0;
+               height: 0px;
+               width: 0px;
+        }
+}
+
+@-webkit-keyframes showBig {
+        0% {
+            opacity: 0;  
+            height: 0px;
+            width: 0px;
+        }        
+       50%{
+            opacity:0;
+            height: 100%;
+            width: 100%;
+        }
+        100% {
+            opacity:1;
+            height: 100%;
+            width: 100%;
+        }
+}
+
+@-moz-keyframes showBig {
+          0% {
+            opacity: 0;  
+            height: 0px;
+            width: 0px;
+        }        
+       50%{
+            opacity:0;
+            height: 100%;
+            width: 100%;
+        }
+        100% {
+            opacity:1;
+            height: 100%;
+            width: 100%;
+        }
+}
+@-o-keyframes showBig {
+          0% {
+            opacity: 0;  
+            height: 0px;
+            width: 0px;
+        }        
+       50%{
+            opacity:0;
+            height: 100%;
+            width: 100%;
+        }
+        100% {
+            opacity:1;
+            height: 100%;
+            width: 100%;
+        }
+}
+@keyframes showBig {
+         0% {
+            opacity: 0;  
+            height: 0px;
+            width: 0px;
+        }        
+       50%{
+            opacity:0;
+            height: 100%;
+            width: 100%;
+        }
+        100% {
+            opacity:1;
+            height: 100%;
+            width: 100%;
+        }
+}
 /** BOOTSTRAP OVERRIDES */
 .modal img{
     max-width :100%;

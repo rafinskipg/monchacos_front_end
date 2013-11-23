@@ -14,8 +14,8 @@ var monchacos = angular.module('monchacos', [], function($routeProvider, $locati
         controller: blogCtrl
     });
     $routeProvider.when('/', {
-        templateUrl: 'templates/home.html',
-        controller: homeCtrl
+        templateUrl: 'templates/blog.html',
+        controller: blogCtrl
     });
     $routeProvider.when('/404', {
         templateUrl: 'templates/404.html',

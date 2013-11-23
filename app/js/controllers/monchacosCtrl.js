@@ -14,7 +14,6 @@ function mainCtrl($scope, $location, $timeout){
 
     angular.forEach([
         ['cv' , 'http://monchacos.com/cv'],
-        ['blog' , '#blog'],
         ['home' , '#']
         
         ]
@@ -81,7 +80,7 @@ function mainCtrl($scope, $location, $timeout){
        $scope.pageTitle=  text;
         $timeout(function() {
           LoopPageTitle(); 
-        }, 1000);
+        }, 2000);
     }
     LoopPageTitle();
  }
@@ -92,10 +91,11 @@ function mainCtrl($scope, $location, $timeout){
 
  function blogCtrl( $scope, $location, monchacosStorage, filterFilter, $http ) {
     var articles = $scope.articles = [];
-    
+    $scope.loaded = false;
     //Asyncronous call to a service. Using Angular JS promises
     monchacosStorage.getBlog().then(function(data) {
       $scope.articles = data;
+     // $scope.loaded = true;
     }, function(reason) {
       $scope.message = 'Sorry, bro... Maybe our CMS is down for maintenance';
     });
