@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <!-- Hi There!  Monchacos Web Page made using Angular JS and Drupal webservices. -->
-<html lang="en" ng-app="monchacos" ng-controller="mainCtrl">
+<html lang="en" ng-app="monchacos" ng-controller="mainCtrl" >
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{pageTitle}}</title>
+        <title ngCloak>{{pageTitle}}</title>
         <link rel="icon" 
           type="image/png" 
           href="favicon.png">
           
         <!-- CSS FILES -->
             <!-- This is twitter Bootstrap -->
-            <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+            <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
             <!-- There the page styles -->
-            <link href="/css/styles.css" rel="stylesheet">
+            <link href="css/styles.css" rel="stylesheet">
         
         <!-- JS Files -->
             <!-- This is Jquery -->
-            <script type="text/javascript" src="/bower_components/jquery/jquery.min.js"></script>  
+            <script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>  
             <!-- This is twitter Bootstrap -->            
-            <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>        
+            <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>        
             <!-- More at bottom of page  -->
             
     </head>
@@ -31,7 +31,7 @@
                     </div>
             </section>
 
-            <section id="mainMenu" class="row">
+            <section id="mainMenu" class="row" ngCloak>
                     <ul class="menu ">
                         <li class="col-sm-3 col-md-2" ng-repeat="link in mainMenu">
                             <a  href="{{link.src}}">{{link.title}}</a>
@@ -43,10 +43,10 @@
             <section id="main"><div ng-view class="row"></div></section>
            
             <!-- About section -->
-            <section id="about" class="row">
+            <section id="about" class="row" >
                  <h3>$> About</h3>
-                    <ul class="menu">
-                        <li class="col-sm-3 col-md-2" ng-repeat="link in aboutMenu">
+                    <ul class="menu" ngCloak>
+                        <li class="col-sm-3 col-md-2" ng-repeat="link in aboutMenu" >
                             <a target="_blank" href="{{link.src}}">{{link.title}}</a>
                         </li>
                     </ul>

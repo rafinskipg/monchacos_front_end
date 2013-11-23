@@ -8,9 +8,10 @@
  * The controllers are not Models, they just link the data in the model and expose it to the View
  * { Tip of the day !} - Controllers should be "Write only", while views should be "Read Only"
  */
-function mainCtrl($scope, $location){
+function mainCtrl($scope, $location, $timeout){
     $scope.mainMenu = [];
     $scope.aboutMenu = [];
+
     angular.forEach([
         ['cv' , 'http://monchacos.com/cv'],
         ['blog' , '#blog'],
@@ -40,8 +41,49 @@ function mainCtrl($scope, $location){
             })
         });
 
-    $scope.pageTitle = "I salute you";
+     
+    var myNewTitle =  "I salute you";
+    $scope.pageTitle = myNewTitle;
+    function flipCoin(){
+        var coin = Math.floor(Math.random()* 2);
+        
+        return coin > 0 ? true : false;
+    }
+    function randomNumber(){
+        return Math.floor(Math.random()*  9);
+
+    }
     
+
+    function LoopPageTitle(){
+        var text = "I salute you";
+    
+        var words = text.split(" ");
+        angular.forEach(words,function(w, i){
+           
+            if(flipCoin()){
+                var ammount = Math.ceil(Math.random() * (w.length));
+                var start = 0;
+                var text_replace = "";
+                for(var index = 0; index< ammount; index++){
+                    text_replace += randomNumber();
+                }
+
+                var w_replace = w.substring(start, start+ammount);
+                w = w.replace(w_replace, text_replace);
+               
+                words[i] = w;
+            }
+
+        });
+        text = words.join(" ");
+      
+       $scope.pageTitle=  text;
+        $timeout(function() {
+          LoopPageTitle(); 
+        }, 1000);
+    }
+    LoopPageTitle();
  }
 
  function homeCtrl($scope){
