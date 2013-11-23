@@ -14,9 +14,19 @@ var monchacos = angular.module('monchacos', [], function($routeProvider, $locati
         controller: blogCtrl
     });
     $routeProvider.when('/', {
-        templateUrl: 'templates/blog.html',
-        controller: blogCtrl
+        templateUrl: 'templates/home.html',
+        controller: homeCtrl
     });
+    $routeProvider.when('/404', {
+        templateUrl: 'templates/404.html',
+        controller: notFoundCtrl
+    });
+    // Redirect to the 404 page.
+    $routeProvider.otherwise({
+        redirectTo: '/404'
+    });
+   
+
  
   //configure html5 to get links working on jsfiddle
   //$locationProvider.html5Mode(true);

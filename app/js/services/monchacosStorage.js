@@ -25,8 +25,10 @@ monchacos.factory( 'monchacosStorage', function($http, $q) {
         },
         getNode: function(nid){
             var deferred = $q.defer();
+            var path = (nodePath.indexOf('monchacos') != -1) ? nodePath +'/'+nid: nodePath;
             //Some documentation over http and success fail callbacks http://docs.angularjs.org/api/ng.$http
-            $http.get(nodePath).then(function(response) {
+            
+            $http.get(path).then(function(response) {
                  deferred.resolve(response.data);
             },function(response){ deferred.reject([]);});
             return deferred.promise;
