@@ -29,7 +29,8 @@ function mainCtrl($scope, $location, $timeout){
         ['Drupal.org' , 'http://drupal.org/user/856336'],
         ['Linkedin' , 'http://es.linkedin.com/pub/rafael-pedrola-gimeno/37/788/226'],
         ['Twitter' , 'https://twitter.com/rafinskipg'],
-        ['WebSite API' , 'http://monchacos.com/monchacos']
+        ['WebSite API' , 'http://monchacos.com/monchacos'],
+        ['NPM' , 'https://npmjs.org/~rafinskipg']
         
         ]
         , function(item, index){
@@ -95,7 +96,7 @@ function mainCtrl($scope, $location, $timeout){
     //Asyncronous call to a service. Using Angular JS promises
     monchacosStorage.getBlog().then(function(data) {
       $scope.articles = data;
-     // $scope.loaded = true;
+      $scope.loaded = true;
     }, function(reason) {
       $scope.message = 'Sorry, bro... Maybe our CMS is down for maintenance';
     });
