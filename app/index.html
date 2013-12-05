@@ -25,25 +25,28 @@
     <body class="">
         <div class="container" >
             <!-- Personal Data -->
-            <section id="logo" class="row">
+            <section id="logo" class="row" ng-show="menuEnabled">
                     <div class="col-xs-12">
-                            <h1>$> rvpg - {{pageTitle}}</h1>
+                            <h1 class="ng-cloack">$> rvpg - {{pageTitle}}</h1>
                     </div>
             </section>
 
-            <section id="mainMenu" class="row" ngCloak>
+            <section id="mainMenu" class="row ng-cloack" ngCloak ng-show="menuEnabled">
                     <ul class="menu ">
                         <li class="col-sm-3 col-md-2" ng-repeat="link in mainMenu">
                             <a  href="{{link.src}}">{{link.title}}</a>
                         </li>
                     </ul>
             </section>
+            <div ng-show="menuEnabled == false">
+                <a ng-href="#">Home</a>
+            </div>
            
             <!-- Main section-->
             <section id="main"><div ng-view class="row"></div></section>
            
             <!-- About section -->
-            <section id="about" class="row" >
+            <section id="about" class="row" ng-show="menuEnabled" >
                  <h3>$> About</h3>
                     <ul class="menu" ngCloak>
                         <li class="col-sm-3 col-md-2" ng-repeat="link in aboutMenu" >

@@ -8,13 +8,17 @@
  * The controllers are not Models, they just link the data in the model and expose it to the View
  * { Tip of the day !} - Controllers should be "Write only", while views should be "Read Only"
  */
-function mainCtrl($scope, $location, $timeout){
+function mainCtrl($scope, $location, $timeout, $rootScope){
     $scope.mainMenu = [];
     $scope.aboutMenu = [];
+    $rootScope.menuEnabled = true;
+    
 
     angular.forEach([
-        ['cv' , 'http://monchacos.com/cv'],
-        ['home' , '#']
+        
+        ['home' , '#'],
+        ['team' , '#team'],
+        ['cv' , 'http://monchacos.com/cv']
         
         ]
         , function(item, index){
@@ -90,7 +94,8 @@ function mainCtrl($scope, $location, $timeout){
 
  } 
 
- function blogCtrl( $scope, $location, monchacosStorage, filterFilter, $http ) {
+ function blogCtrl( $scope, $location, monchacosStorage, filterFilter, $http, $rootScope ) {
+    $rootScope.menuEnabled = true;
     var articles = $scope.articles = [];
     $scope.loaded = false;
     //Asyncronous call to a service. Using Angular JS promises
@@ -140,4 +145,10 @@ function notFoundCtrl($scope){
             $scope.showMonster = true;
         }
      }
+}
+
+
+function teamCtrl($scope, $rootScope){
+    $rootScope.menuEnabled = false;
+    console.log($rootScope)
 }
