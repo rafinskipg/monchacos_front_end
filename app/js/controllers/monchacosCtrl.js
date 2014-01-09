@@ -87,19 +87,16 @@ function mainCtrl($scope, $location, $timeout, $rootScope){
 
  function blogCtrl( $scope, $location, monchacosStorage, $rootScope  ) {
     $rootScope.menuEnabled = true;
-    var articles = $scope.articles = [];
+    $scope.articles = [];
     $scope.loaded = false;
-    //Asyncronous call to a service. Using Angular JS promises
+
     monchacosStorage.getBlog().then(function(data) {
       $scope.articles = data;
       $scope.loaded = true;
     }, function(reason) {
       $scope.message = 'Sorry, bro... Maybe our CMS is down for maintenance';
     });
-    
-    // Watch directives are fired many times. You can use them to execute FAST pieces of code that evaluates some changes on the element.
-    // Dont use SLOW pieces of code in a wath sentence (or counters) as they may slow your  site.
-    $scope.$watch('articles', function() {});
+   
     
     $scope.readArticle = function( article ) {
         $location.path('/article/'+article.nid);
