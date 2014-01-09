@@ -13,6 +13,10 @@ var monchacos = angular.module('monchacos', [], function($routeProvider, $locati
         templateUrl: 'templates/blog.html',
         controller: blogCtrl
     });
+    $routeProvider.when('/article/:nid', {
+        templateUrl: 'templates/article.html',
+        controller: articleCtrl
+    });
     $routeProvider.when('/', {
         templateUrl: 'templates/blog.html',
         controller: blogCtrl

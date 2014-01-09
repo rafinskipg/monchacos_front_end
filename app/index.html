@@ -17,6 +17,7 @@
         <!-- JS Files -->
             <!-- This is Jquery -->
             <script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>  
+            <script type="text/javascript" src="bower_components/underscore.string/dist/underscore.string.min.js"></script>  
             <!-- This is twitter Bootstrap -->            
             <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>        
             <!-- More at bottom of page  -->
@@ -32,9 +33,9 @@
             </section>
 
             <section id="mainMenu" class="row ng-cloack" ngCloak ng-show="menuEnabled">
-                    <ul class="menu ">
-                        <li class="col-sm-3 col-md-2" ng-repeat="link in mainMenu">
-                            <a  href="{{link.src}}">{{link.title}}</a>
+                    <ul class="menu row">
+                        <li class="col-sm-2 col-md-2" ng-repeat="link in mainMenu">
+                            <a  href="{{link.src}}" target="{{link.target}}"><span class="{{link.class}}"></span>{{link.title}}</a>
                         </li>
                     </ul>
             </section>
@@ -57,8 +58,8 @@
 
         </div>
     </body>
-    <!-- Loading our app at the end of the page, like a boss -->
-    <!-- I need to include Require.js -->
+
+    
     <script src="js/libs/angular/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/monchacosCtrl.js"></script>

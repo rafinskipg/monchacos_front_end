@@ -9,23 +9,28 @@
  * { Tip of the day !} - Controllers should be "Write only", while views should be "Read Only"
  */
 function mainCtrl($scope, $location, $timeout, $rootScope){
+    
+    var title = "I salute you. Thank you for coming. What do you need?";
+    
     $scope.mainMenu = [];
     $scope.aboutMenu = [];
     $rootScope.menuEnabled = true;
-    
 
     angular.forEach([
         
-        ['home' , '#'],
-        ['team' , '#team'],
-        ['cv' , 'http://monchacos.com/cv']
+        ['home' , '#', 'glyphicon glyphicon-book'],
+        ['team' , '#team', 'glyphicon glyphicon-send'],
+        ['my list' , '#list', 'glyphicon glyphicon-th-list'],
+        ['cv' , 'http://rvpg.me/cv', 'glyphicon glyphicon-user', 'blank']
         
         ]
         , function(item, index){
 
             $scope.mainMenu.push({ 
                 title : item[0],
-                src: item[1]
+                src: item[1],
+                class: item[2],
+                target: item[3] || ''
             })
         });
     angular.forEach([
@@ -33,7 +38,7 @@ function mainCtrl($scope, $location, $timeout, $rootScope){
         ['Drupal.org' , 'http://drupal.org/user/856336'],
         ['Linkedin' , 'http://es.linkedin.com/pub/rafael-pedrola-gimeno/37/788/226'],
         ['Twitter' , 'https://twitter.com/rafinskipg'],
-        ['WebSite API' , 'http://monchacos.com/monchacos'],
+        ['WebSite API' , 'http://rvpg.me/monchacos'],
         ['NPM' , 'https://npmjs.org/~rafinskipg']
         
         ]
@@ -46,12 +51,12 @@ function mainCtrl($scope, $location, $timeout, $rootScope){
         });
 
      
-    var myNewTitle =  "I salute you";
-    $scope.pageTitle = myNewTitle;
+    $scope.pageTitle = title;
+    
     function flipCoin(){
-        var coin = Math.floor(Math.random()* 2);
+        var coin = Math.floor(Math.random()* 5);
         
-        return coin > 0 ? true : false;
+        return coin > 0 ? false : true;
     }
     function randomNumber(){
         return Math.floor(Math.random()*  9);
@@ -60,29 +65,15 @@ function mainCtrl($scope, $location, $timeout, $rootScope){
     
 
     function LoopPageTitle(){
-        var text = "I salute you";
-    
-        var words = text.split(" ");
-        angular.forEach(words,function(w, i){
-           
+        var charsTitle = _.str.chars(title);
+        
+        angular.forEach(charsTitle,function(character, i){
             if(flipCoin()){
-                var ammount = Math.ceil(Math.random() * (w.length));
-                var start = 0;
-                var text_replace = "";
-                for(var index = 0; index< ammount; index++){
-                    text_replace += randomNumber();
-                }
-
-                var w_replace = w.substring(start, start+ammount);
-                w = w.replace(w_replace, text_replace);
-               
-                words[i] = w;
+                charsTitle[i] = randomNumber();
             }
-
         });
-        text = words.join(" ");
-      
-       $scope.pageTitle=  text;
+        
+       $scope.pageTitle =  charsTitle.join('');
         $timeout(function() {
           LoopPageTitle(); 
         }, 2000);
@@ -94,7 +85,7 @@ function mainCtrl($scope, $location, $timeout, $rootScope){
 
  } 
 
- function blogCtrl( $scope, $location, monchacosStorage, filterFilter, $http, $rootScope ) {
+ function blogCtrl( $scope, $location, monchacosStorage, $rootScope  ) {
     $rootScope.menuEnabled = true;
     var articles = $scope.articles = [];
     $scope.loaded = false;
@@ -109,30 +100,25 @@ function mainCtrl($scope, $location, $timeout, $rootScope){
     // Watch directives are fired many times. You can use them to execute FAST pieces of code that evaluates some changes on the element.
     // Dont use SLOW pieces of code in a wath sentence (or counters) as they may slow your  site.
     $scope.$watch('articles', function() {});
-
-    $scope.opened = false;
     
     $scope.readArticle = function( article ) {
-        //$scope.articleReaded = article;
-        $scope.opened = true;
-        monchacosStorage.getNode(article.nid).then(function(data) {
-            data.body = data.body.und[0].safe_value;
-            $scope.node = data;
-            
-        }, function(reason) {
-            $scope.node = null;
-            $scope.opened = false;
-            $scope.message = "Sorry we cannot recover that post at the momment; This is embarrasing :S";
-        });
+        $location.path('/article/'+article.nid);
     };
 
-    $scope.closeArticle = function(){
-        $scope.opened = false;
-        if($scope.node){
-            $scope.node = null;
-        }
-    }
+}
 
+function articleCtrl($scope, $routeParams, $location, monchacosStorage){
+    var nid = typeof($routeParams.nid) != 'undefined' ? parseInt($routeParams.nid,10) : 0;
+
+    if(nid > 0){
+        monchacosStorage.getNode(nid).then(function(data) {
+            data.body = data.body.und[0].safe_value;
+            $scope.node = data; 
+        }, function(reason) {
+            $scope.node = null;
+            $scope.message = "Sorry we cannot recover that post at the momment; This is embarrasing :S";
+        });
+    } 
 }
 
 function notFoundCtrl($scope){
@@ -149,6 +135,6 @@ function notFoundCtrl($scope){
 
 
 function teamCtrl($scope, $rootScope){
-    $rootScope.menuEnabled = false;
+    $rootScope.menuEnabled = true;
     console.log($rootScope)
 }
