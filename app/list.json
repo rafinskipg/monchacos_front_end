@@ -1,0 +1,37 @@
+{
+    "months":[
+        {
+            "name": "January",
+            "tasks": [
+                {
+                    "name": "Create a list with the goals I want to reach",
+                    "done": true
+                },{
+                    "name": "Finish WebGl experiment with GooCreate",
+                    "done": false
+                }, 
+                {
+                    "name": "Listen to english radios at least 1 hour a day",
+                    "done": false
+                }, 
+                {
+                    "name": "Finish 2 pending books",
+                    "done": false
+                },
+                {
+                    "name": "Start learning a new language (Lisp, ClojureScript, Ruby...)",
+                    "done": false
+                }, 
+                {
+                    "name": "Try browserify",
+                    "done": false
+                },
+                {
+                    "name": "Complete unit tests for Beatus App",
+                    "done": false
+                }  
+            ]
+        }
+
+    ]
+}

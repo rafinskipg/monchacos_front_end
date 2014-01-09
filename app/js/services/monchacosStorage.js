@@ -7,8 +7,8 @@
  * See the Angular JS Docs http://docs.angularjs.org/guide/dev_guide.services.creating_services
  */
 monchacos.factory( 'monchacosStorage', function($http, $q) {
-    /*var blogPath = 'http://www.monchacos.com/monchacos/rest/blog';
-    var nodePath = 'http://www.monchacos.com/monchacos/rest/node';  
+    /* var blogPath = 'http://www.rvpg.me/monchacos/rest/blog';
+    var nodePath = 'http://www.rvpg.me/monchacos/rest/node'; ;  
     
     blogPath= window.location.href.indexOf('www') != -1? blogPath : blogPath.replace('www.','');
     nodePath= window.location.href.indexOf('www')  != -1? nodePath : nodePath.replace('www.','');*/
@@ -35,7 +35,10 @@ monchacos.factory( 'monchacosStorage', function($http, $q) {
                  deferred.resolve(response.data);
             },function(response){ deferred.reject([]);});
             return deferred.promise;
-        } 
+        } ,
+        getList: function(){
+            return $http.get('list.json');
+        }
        
     };
 });

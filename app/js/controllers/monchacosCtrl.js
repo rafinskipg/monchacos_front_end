@@ -136,5 +136,12 @@ function notFoundCtrl($scope){
 
 function teamCtrl($scope, $rootScope){
     $rootScope.menuEnabled = true;
-    console.log($rootScope)
+}
+
+function listCtrl($scope, monchacosStorage){
+    monchacosStorage.getList().then(function(response){
+        $scope.list = response.data;
+    }, function(){
+        $scope.list = [];
+    });
 }
