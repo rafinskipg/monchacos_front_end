@@ -19,6 +19,7 @@ function mainCtrl($scope, $location, $timeout, $rootScope){
     angular.forEach([
         
         ['home' , '#', 'glyphicon glyphicon-book'],
+        ['news' , '#news', 'glyphicon glyphicon-fire'],
         ['team' , '#team', 'glyphicon glyphicon-send'],
         ['my list' , '#list', 'glyphicon glyphicon-th-list'],
         ['cv' , 'http://rvpg.me/cv', 'glyphicon glyphicon-user', 'blank']
@@ -135,8 +136,16 @@ function teamCtrl($scope, $rootScope){
     $rootScope.menuEnabled = true;
 }
 
+function newsCtrl($scope, monchacosStorage){
+    monchacosStorage.getNews().then(function(news){
+        $scope.news = news;
+    }, function(){
+        $scope.news = [];
+    });
+}
+
 function listCtrl($scope, monchacosStorage){
-    monchacosStorage.getList().then(function(response){
+    monchacosStorage.getNews().then(function(response){
         $scope.list = response.data;
     }, function(){
         $scope.list = [];

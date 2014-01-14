@@ -9,12 +9,15 @@
 monchacos.factory( 'monchacosStorage', function($http, $q) {
     var blogPath = 'http://www.rvpg.me/monchacos/rest/blog';
     var nodePath = 'http://www.rvpg.me/monchacos/rest/node'; ;  
+    var newsPath = 'http://www.rvpg.me/monchacos/rest/news'; ;  
     
     blogPath= window.location.href.indexOf('www') != -1? blogPath : blogPath.replace('www.','');
     nodePath= window.location.href.indexOf('www')  != -1? nodePath : nodePath.replace('www.','');
+    newsPath= window.location.href.indexOf('www')  != -1? nodePath : nodePath.replace('www.','');
     
-    /* var blogPath = 'jsonBlog.json';
-    var nodePath = 'jsonNode.json';*/
+    /*var blogPath = 'jsonBlog.json';
+    var nodePath = 'jsonNode.json';
+    var newsPath = 'jsonNews.json';*/
     var nodes = [];
     return {
         nodes: nodes,
@@ -44,7 +47,17 @@ monchacos.factory( 'monchacosStorage', function($http, $q) {
         } ,
         getList: function(){
             return $http.get('list.json');
+        },
+        getNews: function(){
+            var deferred = $q.defer();
+            $http.get(newsPath).then(function(response){
+                deferred.resolve(response.data);
+            }, function(){
+                deferred.reject();
+            });
+            return deferred.promise;
         }
+
        
     };
 });

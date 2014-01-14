@@ -1,0 +1,5 @@
+<section class="news_article" ng-repeat="newsArticle in news">
+    <h2>{{ newsArticle.node_title }}</h2>
+    <div ng-cloak ng-bind-html-unsafe="newsArticle.body.value" ></div>
+    <a class="" title="Go to external website" href="{{ newsArticle.url[0] }}"><i class="glyphicon glyphicon-hand-right"></i></a>
+</section>

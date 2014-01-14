@@ -163,6 +163,20 @@ opacity: 0.4 !important;
     font-size: 13px;
     font-family: helvetica, arial, freesans, clean, sans-serif;
 }
+/* news */
+section.news_article{
+    padding: 20px;
+    background: grey;
+    color: rgb(233, 233, 29);
+    font-family: helvetica, arial, freesans, clean, sans-serif;
+}
+section.news_article a{
+    color: rgb(0, 250, 0);
+    font-size: 20px;
+}
+section.news_article .glyphicon{
+
+}
 
 /* List */
 #list{
