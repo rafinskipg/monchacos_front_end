@@ -13,6 +13,14 @@ var monchacos = angular.module('monchacos', [], function($routeProvider, $locati
         templateUrl: 'templates/blog.html',
         controller: blogCtrl
     });
+    $routeProvider.when('/article/:nid', {
+        templateUrl: 'templates/article.html',
+        controller: articleCtrl
+    });
+    $routeProvider.when('/news', {
+        templateUrl: 'templates/news.html',
+        controller: newsCtrl
+    });
     $routeProvider.when('/', {
         templateUrl: 'templates/blog.html',
         controller: blogCtrl
@@ -20,6 +28,10 @@ var monchacos = angular.module('monchacos', [], function($routeProvider, $locati
     $routeProvider.when('/team', {
         templateUrl: 'templates/team.html',
         controller: teamCtrl
+    });
+    $routeProvider.when('/list', {
+        templateUrl: 'templates/list.html',
+        controller: listCtrl
     });
     $routeProvider.when('/404', {
         templateUrl: 'templates/404.html',

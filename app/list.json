@@ -1,0 +1,72 @@
+{   "goals":{
+        "cool": "Make cool things",
+        "dev" : "Be a better developer",
+        "bussiness": "Start something profitable",
+        "sport": "Be in good shape",
+        "self": "Self respect & learning; things that have to be done"
+    },
+    "months":[
+        {
+            "name": "January",
+            "tasks": [
+                {
+                    "name": "Create a list with the goals I want to reach",
+                    "goal": "self",
+                    "done": true
+                },{
+                    "name": "Finish WebGl experiment with GooCreate",
+                    "goal": "cool",
+                    "resolution": "Here is the demo of my WebGl Space Scene: ",
+                    "done": false
+                }, 
+                {
+                    "name": "Listen to english radios at least 1 hour a day",
+                    "goal": "self",
+                    "done": false
+                }, 
+                {
+                    "name": "Finish 2 pending books",
+                    "goal": "self",
+                    "done": false
+                },
+                {
+                    "name": "Learn more about functional programming (Lisp, Clojure, Monads, etc)",
+                    "goal": "dev",
+                    "done": false
+                }, 
+                {
+                    "name": "Try at least 5 new tools for development",
+                    "resolution": "I tried gulp, Istanbul, browserify, x and x",
+                    "goal": "dev",
+                    "done": false
+                },
+                {
+                    "name": "Complete unit tests for Beatus App",
+                    "goal": "dev",
+                    "done": false
+                }  
+            ]
+        },
+        {
+            "name": "February",
+            "tasks": [
+                {
+                    "name": "Use any performance tool like new relic on my website or other project",
+                    "goal": "dev",
+                    "done": false
+                },
+                {
+                    "name": "Publish at least 2 apps to the android marketplace using phonegap",
+                    "goal": "bussiness",
+                    "done": false
+                },
+                {
+                    "name": "Update the experiments page with a new design",
+                    "goal": "self",
+                    "done": false
+                }  
+            ]
+        }
+
+    ]
+}

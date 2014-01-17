@@ -12,10 +12,14 @@ img{
 
 }
 #logo h1{
-     text-shadow: 0px 3px 8px #2a2a2a;
-     color: rgb(41, 209, 41);
+    text-shadow: 0px 3px 8px #2a2a2a;
+    color: rgb(41, 209, 41);
+    font-size: 11px;
+    
 }
-
+.3d{
+    text-shadow: 2px 2px 1px #E72A41;
+}
 a:hover {
     text-decoration: none;
 }
@@ -99,15 +103,14 @@ section .team{
 }
 
 #articles-list .article{
-    border: 1px solid rgba(34,34,34,0);
+    border: 1px solid rgba(31, 255, 0, 0.12);
     margin: 5px;
     padding: 10px;
     font-size: 1.5em;
     word-break: break-word;
     line-height: 1em;
     text-transform: uppercase;
-    color: #222;
-    text-shadow: 0px 2px 3px #555;
+    color: #2C7C13;
     cursor: pointer;
     
     -webkit-transition: all .25s linear;
@@ -116,17 +119,24 @@ section .team{
           transition: all .25s linear;
 }
 
-#articles-list .article:hover{
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    color: #999; 
-    
+#articles-list .article .glyphicon{
+    visibility: hidden;
 }
+
+#articles-list .article:hover{
+    border: 1px solid rgba(63, 236, 39, 0.35);
+    text-shadow: none;
+    color: rgb(0, 213, 0);    
+}
+
+#articles-list .article:hover .glyphicon{
+    visibility: visible;
+}
+
 #articles #detail-article{
-   
     background-color: white;
     color: black;
     left: 0;
-   
 }
 
 #articles #detail-article .close{
@@ -146,11 +156,42 @@ section .team{
 .close:hover{
 opacity: 0.4 !important;
 }
-#myModal{
-    color:black;
+#myModal, section.article{
+    color: white;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 30px;
+    font-size: 13px;
+    font-family: helvetica, arial, freesans, clean, sans-serif;
+}
+/* news */
+section.news_article{
+    padding: 20px;
+    background: grey;
+    color: rgb(233, 233, 29);
+    font-family: helvetica, arial, freesans, clean, sans-serif;
+}
+section.news_article a{
+    color: rgb(0, 250, 0);
+    font-size: 20px;
+}
+section.news_article .glyphicon{
+
 }
 
-
+/* List */
+#list{
+    text-align: center;
+}
+#list ul{
+    list-style: none;
+}
+#list li{
+    padding: 10px;
+    background: grey; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+    text-align: left;
+    color:white;
+}
 /*About */
 #about{
     font-size: 2em;
@@ -176,6 +217,30 @@ opacity: 0.4 !important;
     text-shadow: #fff 0 0 4px;
     font-size: 5em;
 }
+.glyphicon {
+    margin: 5px;
+}
+
+/* Particle */
+rect {
+  fill: none;
+  pointer-events: all;
+}
+
+circle {
+  fill: none;
+  stroke-width: 2.5px;
+}
+svg{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
 .loader{
     height: 100px;   
     width: 100px;
@@ -330,6 +395,6 @@ opacity: 0.4 !important;
         }
 }
 /** BOOTSTRAP OVERRIDES */
-.modal img{
+img ,.modal img{
     max-width :100%;
 }

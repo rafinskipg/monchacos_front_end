@@ -1,16 +1,14 @@
-# Monchacos Front End Project
-## My website
+## Personal Website
 
-Angular JS front app
+I use this repo for the code of my [personal webpage](http://rvpg.me)
 
-You can find documented code along the project and links to the original pieces of information that are on the internet.
-
-[See demo project](http://www.monchacos.com)
-
-Here you have a kick start of the first resources you will find helpfull.
+It started as a introduction I made myself to AngularJs, I change it every 2 months more or less with some refactor, redesign or new pages. 
 
 ### Resources
-*This resources may be edited by their authors*
+
+Some resources I used the first time I read about AngularJs (May be outdated)
+
+
 * ["Thinking the Angular Way"](http://stackoverflow.com/questions/14994391/how-do-i-think-in-angularjs-if-i-have-a-jquery-background)
 * [Angular JS for big apps](http://briantford.com/blog/huuuuuge-angular-apps.html)
 * [Angular Seed](https://github.com/angular/angular-seed)
@@ -21,8 +19,3 @@ Here you have a kick start of the first resources you will find helpfull.
 * [Angular JS Animations!](http://www.youtube.com/watch?feature=player_embedded&v=cF_JsA9KsDM)
 * [Angular Vs Backbone - Opinion * ](http://www.nebithi.com/2012/12/27/backbone-and-angular-demystifying-the-myths/)
     
-
-## Task List
-- [x] First basic setup for an Angular JS app working at monchacos.com
-- [ ] Add "Experiments/Projects" page
-- [ ] Add more documentation references

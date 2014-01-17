@@ -1,0 +1,12 @@
+<section id="list" class="col-xs-12">
+    <section ng-repeat="month in list.months" >
+        <h2>{{month.name}}</h2>
+        <ul class="row">
+            <li ng-repeat="task in month.tasks">
+                <span ng-class="{'glyphicon glyphicon-saved': task.done == true, 'glyphicon glyphicon-time': task.done == false}"></span>
+                {{task.name}}
+                
+            </li>
+        </ul>
+    </div>
+</section>
