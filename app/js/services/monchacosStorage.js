@@ -13,11 +13,11 @@ monchacos.factory( 'monchacosStorage', function($http, $q) {
     
     blogPath= window.location.href.indexOf('www') != -1? blogPath : blogPath.replace('www.','');
     nodePath= window.location.href.indexOf('www')  != -1? nodePath : nodePath.replace('www.','');
-    newsPath= window.location.href.indexOf('www')  != -1? nodePath : nodePath.replace('www.','');
+    newsPath= window.location.href.indexOf('www')  != -1? newsPath : newsPath.replace('www.','');
     
-    /*var blogPath = 'jsonBlog.json';
-    var nodePath = 'jsonNode.json';
-    var newsPath = 'jsonNews.json';*/
+    var blogPath = 'jsonBlog.json';
+    var nodePath = 'jsonNodeVideo.json';
+    var newsPath = 'jsonNews.json';
     var nodes = [];
     return {
         nodes: nodes,
@@ -49,13 +49,13 @@ monchacos.factory( 'monchacosStorage', function($http, $q) {
             return $http.get('list.json');
         },
         getNews: function(){
-            var deferred = $q.defer();
+            var def = $q.defer();
             $http.get(newsPath).then(function(response){
-                deferred.resolve(response.data);
+                def.resolve(response.data);
             }, function(){
-                deferred.reject();
+                def.reject();
             });
-            return deferred.promise;
+            return def.promise;
         }
 
        

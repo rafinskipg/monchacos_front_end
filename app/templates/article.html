@@ -1,4 +1,8 @@
 <section class="article col-md-12">
 <h1>{{node.title}}</h1>
 <div ng-cloak ng-bind-html-unsafe="node.body" ></div>
+<div ng-show="node.youtube">
+<iframe width="100%" height="400px" src="{{node.youtube}}" frameborder="0" allowfullscreen></iframe>
+</center>
+</div>
 </section>

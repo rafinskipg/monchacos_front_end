@@ -7,7 +7,7 @@ var lrSnippet = require('connect-livereload')({
 var mountFolder = function(connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
-
+var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
 // # Globbing
 // for performance reasons we're only matching one level down:
 // 'test/spec/{,*/}*.js'
@@ -33,21 +33,49 @@ module.exports = function(grunt) {
             }
         },
         connect: {
-            options: {
+             options: {
                 port: 9000,
                 // Change this to '0.0.0.0' to access the server from outside.
-                hostname: 'localhost'
+                hostname: '0.0.0.0'
             },
+            //This is used for the express server
+            proxies: [{
+                context: '/monchacos/rest',
+                host: 'http://rvpg.me',
+
+            },{
+                context: '/monchacos/rest',
+                host: 'rvpg.me',
+
+                    port: 80,
+                    https: false,
+                    changeOrigin: true
+
+            }],
             livereload: {
                 options: {
-                    middleware: function(connect) {
-                        return [
-                            lrSnippet,
-                            mountFolder(connect, 'app')
-                        ];
+                    middleware: function (connect, options) {
+                        if (!Array.isArray(options.base)) {
+                            options.base = [options.base];
+                        }
+
+                        // Setup the proxy
+                        var middlewares = [require('grunt-connect-proxy/lib/utils').proxyRequest];
+
+                        // Serve static files.
+                        options.base.forEach(function(base) {
+                            middlewares.push(connect.static(base));
+                        });
+                        middlewares.push(mountFolder(connect, 'app'))
+                        // Make directory browse-able.
+                        var directory = options.directory || options.base[options.base.length - 1];
+                        middlewares.push(connect.directory(directory));
+
+                        return middlewares;
                     }
                 }
-            }
+            },
+            
         },
         open: {
             server: {
@@ -58,6 +86,8 @@ module.exports = function(grunt) {
 
 
     grunt.registerTask('server', [
+        'configureProxies',
+ //       'livereload-start',
         'connect:livereload',
         'open',
         'watch'
