@@ -7,20 +7,22 @@
  * See the Angular JS Docs http://docs.angularjs.org/guide/dev_guide.services.creating_services
  */
 monchacos.factory( 'monchacosStorage', function($http, $q) {
-    var blogPath = 'http://www.rvpg.me/monchacos/rest/blog';
-    var nodePath = 'http://www.rvpg.me/monchacos/rest/node'; ;  
-    var newsPath = 'http://www.rvpg.me/monchacos/rest/news'; ;  
-    
-    blogPath= window.location.href.indexOf('www') != -1? blogPath : blogPath.replace('www.','');
-    nodePath= window.location.href.indexOf('www')  != -1? nodePath : nodePath.replace('www.','');
-    newsPath= window.location.href.indexOf('www')  != -1? newsPath : newsPath.replace('www.','');
-    
-    /*var blogPath = 'jsonBlog.json';
+    var blogPath,nodePath, newsPath;
+    if(window.location.href.indexOf('rvpg.me')!= -1){
+        blogPath = 'http://www.rvpg.me/monchacos/rest/blog';
+        nodePath = 'http://www.rvpg.me/monchacos/rest/node'; 
+        newsPath = 'http://www.rvpg.me/monchacos/rest/news';   
 
-    var nodePath = 'jsonNodeVideo.json';
-    //var nodePath = 'jsonNodeVideo.json';
-
-    var newsPath = 'jsonNews.json';*/
+        blogPath= window.location.href.indexOf('www') != -1? blogPath : blogPath.replace('www.','');
+        nodePath= window.location.href.indexOf('www')  != -1? nodePath : nodePath.replace('www.','');
+        newsPath= window.location.href.indexOf('www')  != -1? newsPath : newsPath.replace('www.','');
+    }else{
+        blogPath = 'jsonBlog.json';
+        nodePath = 'jsonNodeVideo.json';
+        //nodePath = 'jsonNodeVideo.json';
+        newsPath = 'jsonNews.json';
+    }
+    
     var nodes = [];
     return {
         nodes: nodes,
