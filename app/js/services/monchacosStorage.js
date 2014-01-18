@@ -15,9 +15,12 @@ monchacos.factory( 'monchacosStorage', function($http, $q) {
     nodePath= window.location.href.indexOf('www')  != -1? nodePath : nodePath.replace('www.','');
     newsPath= window.location.href.indexOf('www')  != -1? newsPath : newsPath.replace('www.','');
     
-    var blogPath = 'jsonBlog.json';
+    /*var blogPath = 'jsonBlog.json';
+
     var nodePath = 'jsonNodeVideo.json';
-    var newsPath = 'jsonNews.json';
+    //var nodePath = 'jsonNodeVideo.json';
+
+    var newsPath = 'jsonNews.json';*/
     var nodes = [];
     return {
         nodes: nodes,

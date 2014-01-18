@@ -66,6 +66,16 @@
                     "done": false
                 }  
             ]
+        },
+        {
+            "name": "March",
+            "tasks": [
+                {
+                    "name": "Create a desktop app with node-webkit",
+                    "goal": "dev",
+                    "done": false
+                } 
+            ]
         }
 
     ]
