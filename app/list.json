@@ -16,8 +16,8 @@
                 },{
                     "name": "Finish WebGl experiment with GooCreate",
                     "goal": "cool",
-                    "resolution": "Here is the demo of my WebGl Space Scene: ",
-                    "done": false
+                    "resolution": "Here is the demo of my WebGl Space Scene, it could be better but it's something :) - http://rvpg.me/experiments/gooscene/ ",
+                    "done": true
                 }, 
                 {
                     "name": "Listen to english radios at least 1 hour a day",
@@ -36,9 +36,9 @@
                 }, 
                 {
                     "name": "Try at least 5 new tools for development",
-                    "resolution": "I tried gulp, Istanbul, browserify, x and x",
+                    "resolution": "I tried gulp, dart, browserify, supertest, mongoose and chai",
                     "goal": "dev",
-                    "done": false
+                    "done": true
                 },
                 {
                     "name": "Complete unit tests for Beatus App",

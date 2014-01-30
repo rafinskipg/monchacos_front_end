@@ -5,7 +5,7 @@
             <li ng-repeat="task in month.tasks">
                 <span ng-class="{'glyphicon glyphicon-saved': task.done == true, 'glyphicon glyphicon-time': task.done == false}"></span>
                 {{task.name}}
-                
+                <div class="resolution" ng-show="task.resolution">{{task.resolution}}</div>
             </li>
         </ul>
     </div>

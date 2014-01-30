@@ -111,7 +111,7 @@ function articleCtrl($scope, $routeParams, $location, monchacosStorage){
     if(nid > 0){
         monchacosStorage.getNode(nid).then(function(data) {
             data.body = data.body.und[0].safe_value;
-            data.youtube = data.field_youtube.und[0].title.replace('watch?v=','embed/').replace('http:','');
+            data.youtube = data.field_youtube.und ? data.field_youtube.und[0].title.replace('watch?v=','embed/').replace('http:','') : '';
             $scope.node = data; 
         }, function(reason) {
             $scope.node = null;

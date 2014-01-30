@@ -192,6 +192,12 @@ section.news_article .glyphicon{
     text-align: left;
     color:white;
 }
+#list .resolution{
+    padding: 10px;
+    background: rgb(54, 107, 54);
+    margin-top: 10px;
+    border: 1px solid;
+}
 /*About */
 #about{
     font-size: 2em;
