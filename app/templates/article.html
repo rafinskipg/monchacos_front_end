@@ -5,4 +5,13 @@
 <iframe width="100%" height="400px" src="{{node.youtube}}" frameborder="0" allowfullscreen></iframe>
 </center>
 </div>
+
+<div ng-show="node.field_references && node.field_references.und && node.field_references.und.length > 0">
+  <h3> For more information, see:  </h3>
+  <ul>
+    <li ng-repeat="link in node.field_references.und">
+      <a href="link.url" target="_blank">{{ link.title }}</a>
+    </li>
+  </ul>
+</div>
 </section>

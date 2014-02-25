@@ -20,7 +20,7 @@ function mainCtrl($scope, $location, $timeout, $rootScope){
         
         ['home' , '#', 'glyphicon glyphicon-book'],
         ['news' , '#news', 'glyphicon glyphicon-fire'],
-        ['team' , '#team', 'glyphicon glyphicon-send'],
+        //['team' , '#team', 'glyphicon glyphicon-send'],
         ['my list' , '#list', 'glyphicon glyphicon-th-list'],
         ['cv' , 'http://rvpg.me/cv', 'glyphicon glyphicon-user', 'blank']
         

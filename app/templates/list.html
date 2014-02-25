@@ -1,8 +1,11 @@
 <section id="list" class="col-xs-12">
-    <section ng-repeat="month in list.months" >
-        <h2>{{month.name}}</h2>
+    <p><i>I will try to complete all the things I want to do this year. But this list may change, because what I want now may not be what I will desire in the future. </i></p>
+    <p>Rule number 1: Adapt yourself to change</p>
+    <p>Rule number 2: Don't give up on what you still want</p>
+    <section ng-repeat="year in list.years" >
+        <h2>{{year.name}}</h2>
         <ul class="row">
-            <li ng-repeat="task in month.tasks">
+            <li ng-repeat="task in year.tasks">
                 <span ng-class="{'glyphicon glyphicon-saved': task.done == true, 'glyphicon glyphicon-time': task.done == false}"></span>
                 {{task.name}}
                 <div class="resolution" ng-show="task.resolution">{{task.resolution}}</div>
