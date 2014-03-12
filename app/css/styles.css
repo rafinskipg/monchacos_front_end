@@ -155,7 +155,7 @@ opacity: 0.4 !important;
 }
 #myModal, section.article{
     color: white;
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.32);
     padding: 30px;
     font-size: 13px;
     font-family: helvetica, arial, freesans, clean, sans-serif;
