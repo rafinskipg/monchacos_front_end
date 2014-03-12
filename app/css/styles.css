@@ -1,5 +1,5 @@
 body{
-    background: #474747 url(../img/bg.png);
+    background: #F4F4F2 url(../img/bg.png);
     font-family: 'Share Tech Mono', sans-serif;
     font-size: 1.3em;
     color: rgb(41, 209, 41);
@@ -11,11 +11,20 @@ img{
     max-widht: 100%;
 
 }
+a{
+    color: white;
+     -webkit-transition: all .25s linear;
+     -moz-transition: all .25s linear;
+       -o-transition: all .25s linear;
+          transition: all .25s linear;
+}
+a:hover{
+    color: #CC3D33;
+}
 #logo h1{
     text-shadow: 0px 3px 8px #2a2a2a;
     color: rgb(41, 209, 41);
     font-size: 11px;
-    
 }
 .3d{
     text-shadow: 2px 2px 1px #E72A41;
@@ -39,25 +48,13 @@ section .menu{
     list-style: none;
 }
 section .menu a {
-    color: #222;
-    text-shadow: 0px 2px 3px #555;
-    cursor: pointer;
     display: block;
     width: 100%;
     height: 100%;
-}
-
-section .menu li a{
     padding: 10px;
-     -webkit-transition: all .25s linear;
-     -moz-transition: all .25s linear;
-       -o-transition: all .25s linear;
-          transition: all .25s linear;
+    text-align: center;
 }
 
-section .menu li:hover a{
-    color:rgb(177, 170, 170);
-}
 
 #mainMenu a{
     font-size: 2.4em;
@@ -103,14 +100,14 @@ section .team{
 }
 
 #articles-list .article{
-    border: 1px solid rgba(31, 255, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     margin: 5px;
     padding: 10px;
     font-size: 1.5em;
     word-break: break-word;
     line-height: 1em;
     text-transform: uppercase;
-    color: #2C7C13;
+    color: white;
     cursor: pointer;
     
     -webkit-transition: all .25s linear;
@@ -252,7 +249,7 @@ svg{
     width: 100px;
     opacity: 1;
     margin-left: 50%;
-    background: url('../img/ajax-loader2.gif');
+    background: url('../favicon.png');
     background-size: 100px;
         -webkit-animation-duration: 2s;
            -moz-animation-duration: 2s;

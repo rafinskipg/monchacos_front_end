@@ -1,0 +1,71 @@
+[
+{
+  "name": "Lineman Redesign",
+  "description":"FrontEnd of the linemanJS site",
+    "url": "http://linemanjs.com/",
+  "image" :"lineman.png"
+  },{
+  "name": "Gitella",
+  "description":"A useful git cheatsheet",
+ "url": "http://gitella.herokuapp.com/",
+  "image" :"gitella.png"
+},{
+  "name": "Git changelog",
+  "description":"A grunt plugin for changelog generation based on commit messages",
+    "url": "https://npmjs.org/package/git-changelog",
+  "image" :"grunt.jpg"
+  },{
+  "name": "Game of life",
+  "description":"A map agnostic implementation wit tdd",
+  "url": "http://rvpg.me/experiments/gameoflife/",
+  "image" :"gameoflife.png"
+},{
+  "name": "Space WebGL",
+  "description":"Learning the basics of WebGl with goo",
+  "url": "http://rvpg.me/experiments/gooscene",
+  "image" :"gooscene.png"
+},{
+  "name": "Nvalue",
+  "description":"Maths and tdd",
+  "url": "http://rvpg.me/experiments/nvalue",
+  "image" :"nvalue.png"
+},{
+  "name": "Page Transitions",
+  "description":"CSS3 page transitions",
+  "url": "http://labs.deinterfaz.com/PageTransitions/",
+  "image" :"exp1.png"
+},{
+  "name": "Web Components",
+  "description":"Contributed to a web components plugin",
+  "url": "https://github.com/rafinskipg/ninja-presentation",
+  "image" :"webcomp.png"
+},{
+  "name": "Periodic table",
+  "description":"A periodic table made in AngularJS",
+  "url": "http://rvpg.me/experiments/periodic-elements/#/",
+  "image" :"periodic.png"
+},{
+  "name": "TripTo",
+  "description":"WebApp for visiting places",
+  "url": "http://rvpg.me/experiments/Visiting/",
+  "image" :"visitable.png"
+},{
+  "name": "NyanBomb",
+  "description":"A game about Nyan Cat in the space",
+  "url": "http://rvpg.me/experiments/BombTouch/",
+  "image" :"bombtouch.png"
+},
+{
+  "name": "Evolution",
+  "description":"A experiment with canvas and 'creatures'",
+  "url": "http://rvpg.me/experiments/Evolution/",
+  "image" :"evolution.png"
+},
+{
+  "name": "Animated Stories",
+  "description":"A work that was left in progress, about creating animated books",
+  "url": "http://cuentosinfantilesciencia.com/",
+  "image" :"cuentos.png"
+}
+
+]

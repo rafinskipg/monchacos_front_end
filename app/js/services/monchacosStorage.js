@@ -53,6 +53,9 @@ monchacos.factory( 'monchacosStorage', function($http, $q) {
         getList: function(){
             return $http.get('list.json');
         },
+        getExperiments: function(){
+            return $http.get('jsonExperiments.json');
+        },
         getNews: function(){
             var def = $q.defer();
             $http.get(newsPath).then(function(response){

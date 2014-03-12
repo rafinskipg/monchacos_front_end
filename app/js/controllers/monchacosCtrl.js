@@ -19,10 +19,11 @@ function mainCtrl($scope, $location, $timeout, $rootScope){
     angular.forEach([
         
         ['home' , '#', 'glyphicon glyphicon-book'],
-        ['news' , '#news', 'glyphicon glyphicon-fire'],
+        //['news' , '#news', 'glyphicon glyphicon-fire'],
+        ['experiments' , '#experiments', 'glyphicon glyphicon-fire'],
         //['team' , '#team', 'glyphicon glyphicon-send'],
         ['my list' , '#list', 'glyphicon glyphicon-th-list'],
-        ['cv' , 'http://rvpg.me/cv', 'glyphicon glyphicon-user', 'blank']
+
         
         ]
         , function(item, index){
@@ -36,11 +37,11 @@ function mainCtrl($scope, $location, $timeout, $rootScope){
         });
     angular.forEach([
         ['GitHub' , 'https://github.com/rafinskipg'],
-        ['Drupal.org' , 'http://drupal.org/user/856336'],
         ['Linkedin' , 'http://es.linkedin.com/pub/rafael-pedrola-gimeno/37/788/226'],
         ['Twitter' , 'https://twitter.com/rafinskipg'],
-        ['WebSite API' , 'http://rvpg.me/monchacos'],
-        ['NPM' , 'https://npmjs.org/~rafinskipg']
+        ['NPM' , 'https://npmjs.org/~rafinskipg'],
+        ['old cv' , 'http://rvpg.me/cv']
+
         
         ]
         , function(item, index){
@@ -150,5 +151,12 @@ function listCtrl($scope, monchacosStorage){
         $scope.list = response.data;
     }, function(){
         $scope.list = [];
+    });
+}
+function expCtrl($scope, monchacosStorage){
+    monchacosStorage.getExperiments().then(function(response){
+        $scope.experiments = response.data;
+    }, function(){
+        $scope.experiments = [];
     });
 }

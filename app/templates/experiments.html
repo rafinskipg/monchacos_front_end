@@ -1,0 +1,13 @@
+<section id="experiments" class="col-xs-12">
+    <section ng-repeat="exp in experiments" >
+        <a href="{{exp.url}}" class="row">
+            <div class="col-xs-2">
+                <img src="img/experiments/{{exp.image}}">
+            </div>
+            <div class="col-xs-10">
+                <h2>{{exp.name}}</h2>
+                <p>{{exp.description}}</p>
+            </div>
+        </a>
+    </section>
+</section>

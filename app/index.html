@@ -28,14 +28,14 @@
         <div class="container" >
             <!-- Personal Data -->
             <section id="logo" class="row" ng-show="menuEnabled">
-                    <div class="col-xs-12">
-                            <h1 class="ng-cloack">$> rvpg - {{pageTitle}}</h1>
+                    <div class="col-xs-offset-5 col-xs-3">
+                           <img src="img/logo.png" > 
                     </div>
             </section>
 
             <section id="mainMenu" class="row ng-cloack" ngCloak ng-show="menuEnabled">
                     <ul class="menu row">
-                        <li class="col-sm-2 col-md-2" ng-repeat="link in mainMenu">
+                        <li class="col-sm-4 col-md-4" ng-repeat="link in mainMenu">
                             <a  href="{{link.src}}" target="{{link.target}}"><span class="{{link.class}}"></span>{{link.title}}</a>
                         </li>
                     </ul>
