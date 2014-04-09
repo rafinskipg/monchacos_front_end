@@ -22,12 +22,12 @@
     <body class="container-fluid">
         <header>
             <div class="row">
-                <div class="col-xs-2">
+                <div class="col-xs-2 hidden-xs">
                      <img src="img/logo.png" > 
                 </div>
-                <div class="col-xs-10">
+                <div class="col-sm-10">
                     <ul class="menu" ngCloak>
-                        <li class="col-sm-3 col-md-2" ng-repeat="link in aboutMenu" >
+                        <li class="col-sm-3 col-xs-3" ng-repeat="link in aboutMenu" >
                             <a target="_blank" href="{{link.src}}">{{link.title}}</a>
                         </li>
                     </ul>
@@ -35,14 +35,14 @@
             </div>
         </header>
         <div class="container mainContainer" >
-            <div class="col-xs-3">
+            <div class="col-md-3">
                 <ul class="menu">
                     <li ng-repeat="link in mainMenu">
                         <a  href="{{link.src}}" target="{{link.target}}"><span class="{{link.class}}"></span>{{link.title}}</a>
                     </li>
                 </ul>
             </div>
-            <div class="col-xs-9 container-fluid">
+            <div class="col-sm-9 container-fluid">
                 <section id="main">
                     <div ng-view class="row"></div>
                 </section>
