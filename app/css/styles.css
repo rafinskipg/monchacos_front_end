@@ -1,18 +1,40 @@
 body{
-    background: #F4F4F2 url(../img/bg.png);
+    background: #F4F4F2;
     font-family: 'Share Tech Mono', sans-serif;
     font-size: 1.3em;
-    color: rgb(41, 209, 41);
+    color: #CC3D33;
+    
 }
+
+header{
+    height: 50px;
+    margin-bottom: 50px;
+    background: #CC3D33;
+    position: fixed;
+    width: 100%;
+    z-index: 2000;
+    padding-top:10px;
+}
+header img{
+    max-height: 80px;
+}
+header a{
+    color:white;
+}
+.mainContainer{
+    padding-top: 80px;
+}
+
 h1,h2,h3,h4{
     font-family: 'Share Tech Mono', sans-serif;
 }
+
 img{
     max-widht: 100%;
-
 }
+
 a{
-    color: white;
+    color: #CC3D33;
      -webkit-transition: all .25s linear;
      -moz-transition: all .25s linear;
        -o-transition: all .25s linear;
@@ -21,14 +43,7 @@ a{
 a:hover{
     color: #CC3D33;
 }
-#logo h1{
-    text-shadow: 0px 3px 8px #2a2a2a;
-    color: rgb(41, 209, 41);
-    font-size: 11px;
-}
-.3d{
-    text-shadow: 2px 2px 1px #E72A41;
-}
+
 a:hover {
     text-decoration: none;
 }
@@ -42,9 +57,8 @@ section {
     margin-bottom: 20px;
 }
 
-section .menu{
-    margin-top: 20px;
-    font-size: 0.8em;
+.menu{
+    font-size: 1.4em;
     list-style: none;
 }
 section .menu a {
@@ -91,8 +105,8 @@ section .team{
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    background: rgb(134, 64, 64);
-    color: #999; 
+    background:  #CC3D33;
+    color: white; 
     padding: 5px;
 }
 #articles ul {
@@ -100,16 +114,16 @@ section .team{
 }
 
 #articles-list .article{
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid  #CC3D33;;
     margin: 5px;
     padding: 10px;
     font-size: 1.5em;
     word-break: break-word;
     line-height: 1em;
     text-transform: uppercase;
-    color: white;
     cursor: pointer;
-    
+    color: white;
+    background: #CC3D33;
     -webkit-transition: all .25s linear;
      -moz-transition: all .25s linear;
        -o-transition: all .25s linear;

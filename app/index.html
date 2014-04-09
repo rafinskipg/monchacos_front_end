@@ -1,62 +1,52 @@
 <!DOCTYPE html>
-<!-- Hi There!  Monchacos Web Page made using Angular JS and Drupal webservices. -->
 <html lang="en" ng-app="monchacos" ng-controller="mainCtrl" >
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title ngCloak>{{pageTitle}}</title>
+        <title>RVPG</title>
         <link rel="icon" 
           type="image/png" 
           href="favicon.png">
           
         <!-- CSS FILES -->
-            <!-- This is twitter Bootstrap -->
             <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
             <!-- There the page styles -->
             <link href="css/styles.css" rel="stylesheet">
         
         <!-- JS Files -->
-            <!-- This is Jquery -->
             <script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>  
-            <script type="text/javascript" src="bower_components/underscore.string/dist/underscore.string.min.js"></script>  
-            <!-- This is twitter Bootstrap -->            
+            <script type="text/javascript" src="bower_components/underscore.string/dist/underscore.string.min.js"></script>            
             <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>        
-            <!-- More at bottom of page  -->
             
     </head>
-    <body class="">
-        <svg></svg>
-        <div class="container" >
-            <!-- Personal Data -->
-            <section id="logo" class="row" ng-show="menuEnabled">
-                    <div class="col-xs-offset-5 col-xs-3">
-                           <img src="img/logo.png" > 
-                    </div>
-            </section>
 
-            <section id="mainMenu" class="row ng-cloack" ngCloak ng-show="menuEnabled">
-                    <ul class="menu row">
-                        <li class="col-sm-4 col-md-4" ng-repeat="link in mainMenu">
-                            <a  href="{{link.src}}" target="{{link.target}}"><span class="{{link.class}}"></span>{{link.title}}</a>
-                        </li>
-                    </ul>
-            </section>
-            <div ng-show="menuEnabled == false">
-                <a ng-href="#">Home</a>
-            </div>
-           
-            <!-- Main section-->
-            <section id="main"><div ng-view class="row"></div></section>
-           
-            <!-- About section -->
-            <section id="about" class="row" ng-show="menuEnabled" >
-                 <h3>$> About</h3>
+    <body class="container-fluid">
+        <header>
+            <div class="row">
+                <div class="col-xs-2">
+                     <img src="img/logo.png" > 
+                </div>
+                <div class="col-xs-10">
                     <ul class="menu" ngCloak>
                         <li class="col-sm-3 col-md-2" ng-repeat="link in aboutMenu" >
                             <a target="_blank" href="{{link.src}}">{{link.title}}</a>
                         </li>
                     </ul>
-            </section>
-
+                </div>
+            </div>
+        </header>
+        <div class="container mainContainer" >
+            <div class="col-xs-3">
+                <ul class="menu">
+                    <li ng-repeat="link in mainMenu">
+                        <a  href="{{link.src}}" target="{{link.target}}"><span class="{{link.class}}"></span>{{link.title}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-9 container-fluid">
+                <section id="main">
+                    <div ng-view class="row"></div>
+                </section>
+            </div>
         </div>
     </body>
 
@@ -66,42 +56,6 @@
     <script src="js/controllers/monchacosCtrl.js"></script>
     <script src="js/services/monchacosStorage.js"></script>
     <script src="js/directives/monchacosActive.js"></script>
-    <!--<script src="http://d3js.org/d3.v3.min.js"></script>
-
-    <script>
-    var width = Math.max(960, innerWidth),
-        height = Math.max(500, innerHeight);
-
-    var i = 0;
- //http://d3js.org/
-    var svg = d3.select("svg");
-
-    svg.append("rect")
-        .attr("width", width)
-        .attr("height", height)
-        .on("ontouchstart" in document ? "touchmove" : "mousemove", particle);
-
-    function particle() {
-      var m = d3.mouse(this);
-
-      svg.insert("circle", "rect")
-          .attr("cx", m[0])
-          .attr("cy", m[1])
-          .attr("r", 1e-6)
-          .style("stroke", d3.hsl((i = (i + 1) % 360), 1, .5))
-          .style("stroke-opacity", 1)
-        .transition()
-          .duration(2000)
-          .ease(Math.sqrt)
-          .attr("r", 10)
-          .style("stroke-opacity", 1e-6)
-          .remove();
-
-      d3.event.preventDefault();
-    }
-    </script>-->
-    <!-- Google Fonts - the commented ones are good too.-->
-    <!--<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>-->
+  
     <link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
 </html>

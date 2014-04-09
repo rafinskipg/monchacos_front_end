@@ -39,10 +39,7 @@ function mainCtrl($scope, $location, $timeout, $rootScope){
         ['GitHub' , 'https://github.com/rafinskipg'],
         ['Linkedin' , 'http://es.linkedin.com/pub/rafael-pedrola-gimeno/37/788/226'],
         ['Twitter' , 'https://twitter.com/rafinskipg'],
-        ['NPM' , 'https://npmjs.org/~rafinskipg'],
-        ['old cv' , 'http://rvpg.me/cv']
-
-        
+        ['NPM' , 'https://npmjs.org/~rafinskipg']
         ]
         , function(item, index){
 
