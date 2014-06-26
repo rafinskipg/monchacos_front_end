@@ -22,8 +22,8 @@
                 {
                     "name": "Improve my english",
                     "goal": "self",
-                    "resolution": "",
-                    "done": false
+                    "resolution": "Learning a lot :), but still much more to do",
+                    "done": true
                 }, 
                 {
                     "name": "Finish pending books",
@@ -48,7 +48,8 @@
                 {
                     "name": "Make some mobile apps",
                     "goal": "bussiness",
-                    "done": false
+                    "resolution":"For now Gitella is out!",
+                    "done": true
                 },
                 {
                     "name": "Update the experiments page with a new design",
@@ -58,12 +59,14 @@
                 {
                     "name": "Contribute to any opensource project",
                     "goal": "dev",
-                    "done": false
+                    "done": true,
+                    "resolution": "I've created my own opensource pet project and commited to some other repos"
                 },
                 {
                     "name": "Be in a better shape than last year",
                     "goal": "dev",
-                    "done": false
+                    "done": true,
+                    "resolution": "Totally!"
                 },
                 {
                     "name": "Do something good for somebody",
