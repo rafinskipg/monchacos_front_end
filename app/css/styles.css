@@ -128,11 +128,10 @@ section .team{
     -moz-transition: all .25s linear;
     -o-transition: all .25s linear;
     transition: all .25s linear;
+   
 }
 
-#articles-list .article .glyphicon{
-    visibility: hidden;
-}
+
 
 #articles-list .article:hover{
     box-shadow: 0px 1px 3px rgba(67, 84, 151, 0.52);
@@ -172,6 +171,15 @@ opacity: 0.4 !important;
     padding: 30px;
     font-size: 13px;
     font-family: helvetica, arial, freesans, clean, sans-serif;
+     font-size: 17px;
+    text-rendering: optimizeLegibility;
+}
+section.article a{
+    color: #CA726C;
+}
+
+section.article .glyphicon{
+    visibility: hidden;
 }
 /* news */
 section.news_article{
