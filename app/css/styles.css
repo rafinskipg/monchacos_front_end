@@ -2,14 +2,14 @@ body{
     background: #F4F4F2;
     font-family: 'Share Tech Mono', sans-serif;
     font-size: 1.3em;
-    color: #CC3D33;
+    color: #FFFFFF;
     
 }
 
 header{
     height: 50px;
     margin-bottom: 50px;
-    background: #CC3D33;
+    background: rgba(67, 84, 151, 0.52);
     position: fixed;
     width: 100%;
     z-index: 2000;
@@ -34,7 +34,7 @@ img{
 }
 
 a{
-    color: #CC3D33;
+    color: white;
      -webkit-transition: all .25s linear;
      -moz-transition: all .25s linear;
        -o-transition: all .25s linear;
@@ -114,20 +114,20 @@ section .team{
 }
 
 #articles-list .article{
-    border: 1px solid  #CC3D33;;
-    margin: 5px;
+    border-radius: 5px;
     padding: 10px;
     font-size: 1.5em;
+    margin-bottom: 20px;
     word-break: break-word;
     line-height: 1em;
     text-transform: uppercase;
     cursor: pointer;
     color: white;
-    background: #CC3D33;
+    background: rgba(43, 59, 105, 0.51);
     -webkit-transition: all .25s linear;
-     -moz-transition: all .25s linear;
-       -o-transition: all .25s linear;
-          transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
 }
 
 #articles-list .article .glyphicon{
@@ -135,9 +135,8 @@ section .team{
 }
 
 #articles-list .article:hover{
-    border: 1px solid rgba(63, 236, 39, 0.35);
-    text-shadow: none;
-    color: rgb(0, 213, 0);    
+    box-shadow: 0px 1px 3px rgba(67, 84, 151, 0.52);
+    color: rgba(193, 197, 211, 1);
 }
 
 #articles-list .article:hover .glyphicon{

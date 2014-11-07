@@ -28,9 +28,22 @@ module.exports = function(grunt) {
                 files: [
                     'app/{,**/}**.html',
                     'app/{,**/}**.js',
-                    'app/{,**/}**.css'
+                    'app/{,**/}**.css',
+                    '!app/js/canvas/**/**.js'
                 ]
+            },
+
+            canvas: {
+              files: ['app/js/canvas/**/*.js'],
+              tasks: ['browserify']
             }
+        },
+        browserify: {
+          dist: {
+            files: {
+              'app/js/canvas.js': ['app/js/canvas/**/*.js'],
+            }
+          }
         },
         connect: {
              options: {
@@ -87,7 +100,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('server', [
         'configureProxies',
- //       'livereload-start',
+        'browserify',
         'connect:livereload',
         'open',
         'watch'

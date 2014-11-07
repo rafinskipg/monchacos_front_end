@@ -11,11 +11,12 @@
             <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
             <!-- There the page styles -->
             <link href="css/styles.css" rel="stylesheet">
+            <link href="css/canvas.css" rel="stylesheet">
         
         <!-- JS Files -->
             <script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>  
+            <script type="text/javascript" src="bower_components/lodash/dist/lodash.min.js"></script>            
             <script type="text/javascript" src="bower_components/underscore.string/dist/underscore.string.min.js"></script>            
-            <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>        
             
     </head>
 
@@ -35,6 +36,7 @@
             </div>
         </header>
         <div class="container mainContainer" >
+            <canvas id="canvas"></canvas>
             <div class="col-md-3">
                 <ul class="menu">
                     <li ng-repeat="link in mainMenu">
@@ -42,7 +44,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-9 container-fluid">
+            <div class="col-md-9 container-fluid">
                 <section id="main">
                     <div ng-view class="row"></div>
                 </section>
@@ -50,9 +52,9 @@
         </div>
     </body>
 
-    
     <script src="js/libs/angular/angular.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/canvas.js"></script>
     <script src="js/controllers/monchacosCtrl.js"></script>
     <script src="js/services/monchacosStorage.js"></script>
     <script src="js/directives/monchacosActive.js"></script>
