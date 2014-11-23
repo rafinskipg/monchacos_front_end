@@ -2,27 +2,31 @@ body{
     background: #F4F4F2;
     font-family: 'Share Tech Mono', sans-serif;
     font-size: 1.3em;
-    color: #FFFFFF;
+    color: #000000;
     
 }
 
 header{
     height: 50px;
     margin-bottom: 50px;
-    background: rgba(67, 84, 151, 0.52);
+    background: transparent;
     position: fixed;
     width: 100%;
     z-index: 2000;
     padding-top:10px;
 }
+
 header img{
     max-height: 80px;
 }
 header a{
-    color:white;
+    color:#CC3D33;
 }
 .mainContainer{
     padding-top: 80px;
+}
+.content{
+    z-index: 2000;
 }
 
 h1,h2,h3,h4{
@@ -34,7 +38,7 @@ img{
 }
 
 a{
-    color: white;
+    color:#CC3D33;
      -webkit-transition: all .25s linear;
      -moz-transition: all .25s linear;
        -o-transition: all .25s linear;
@@ -114,28 +118,32 @@ section .team{
 }
 
 #articles-list .article{
-    border-radius: 5px;
-    padding: 10px;
+    padding: 15px;
     font-size: 1.5em;
     margin-bottom: 20px;
     word-break: break-word;
     line-height: 1em;
     text-transform: uppercase;
     cursor: pointer;
-    color: white;
-    background: rgba(43, 59, 105, 0.51);
+    color: rgb(136, 122, 122);
+    border: 1px solid rgba(0, 0, 0, 0.22);
     -webkit-transition: all .25s linear;
     -moz-transition: all .25s linear;
     -o-transition: all .25s linear;
     transition: all .25s linear;
-   
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.75);
+
+    height: 80px;
+    overflow: hidden;
 }
 
 
 
 #articles-list .article:hover{
-    box-shadow: 0px 1px 3px rgba(67, 84, 151, 0.52);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28);
     color: rgba(193, 197, 211, 1);
+    font-size: 24px;
 }
 
 #articles-list .article:hover .glyphicon{
@@ -167,7 +175,7 @@ opacity: 0.4 !important;
 }
 #myModal, section.article{
     color: white;
-    background: rgba(0, 0, 0, 0.32);
+    background: rgba(170, 59, 59, 0.96);
     padding: 30px;
     font-size: 13px;
     font-family: helvetica, arial, freesans, clean, sans-serif;
@@ -421,4 +429,5 @@ svg{
 /** BOOTSTRAP OVERRIDES */
 img ,.modal img{
     max-width :100%;
+    padding-bottom: 20px;
 }

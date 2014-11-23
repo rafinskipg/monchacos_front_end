@@ -1,19 +1,19 @@
 /** YEAH **/
 'use strict';
-var textGenerator = require('./models/texts');
+var birdsGenerator = require('./models/birdsGenerator');
 var particleGenerator = require('./models/particles');
+var settings = require('./settings');
+var player = require('./player');
 var particles = particleGenerator.particles;
-var texts = textGenerator.texts;
-var song, then, now, canvas,ctx, shown,  particlesGenerationStep, particlesDying, color;
+var song, then, now, canvas,ctx, canvas2, ctx2, shown,  particlesGenerationStep, particlesDying, color, birds;
 
 
 function start(){
-  launchCanvas();
-   color = {r:53,g:100,b:223};
-  //particles = particleGenerator.getFireParticles();
   particlesGenerationStep = 'white'
+  birds = birdsGenerator.getPackOfBirds(window.innerWidth, window.innerHeight);
+  player.initialize();
   getBlueParticles();
-  //textGenerator.suscribe(changeAnimation);
+  launchCanvas();
 }
 
 function launchCanvas(){
@@ -21,10 +21,14 @@ function launchCanvas(){
 
   then = Date.now();
   canvas = document.getElementById('canvas');
+  canvas2 = document.getElementById('canvas2');
   
   canvas.width = window.innerWidth //Or wathever
-  canvas.height = window.innerHeight; //Or wathever
+  canvas.height = window.innerHeight; //Or wathever 
+  canvas2.width = window.innerWidth //Or wathever
+  canvas2.height = window.innerHeight; //Or wathever
   ctx = canvas.getContext('2d');
+  ctx2 = canvas2.getContext('2d');
 
   loop();
 }
@@ -34,81 +38,65 @@ var loop = function loop(){
   var dt = now - then;
   then = now;
 
-  update(dt);
   clear();
+  update(dt);
   render();
 
   requestAnimationFrame(loop);
 }
 
 function update(dt){
-  updateBackgrounds(dt/1000);
-  updateTexts(dt/1000);
+  var newDt = dt/1000;
+  updateBackgrounds(newDt);
+  updateBirds(newDt);
+  player.update(newDt);
 }
 
 function updateBackgrounds(dt){
-  if(particlesGenerationStep != 'fire'){
-     particles = _.compact(particles.map(function(particle){
-        particle.update(dt);
-        if(particle.dying && particle.remaining_life <= 0){
-          return null;
-        }
-
-        if(particle.pos.x > -30  && particle.pos.x < window.innerWidth + 30 
-          && particle.pos.y > -30 && particle.pos.y < window.innerHeight + 30){
-          return particle;
-        }else if(!particlesDying){
-          //Play sound particle
-          return particleGenerator.newParticle(color);
-        }
-      }));
-   }else{
-      particles = particles.map(function(particle){
-        particle.update(dt);
-        if(particle.remaining_life <= 0){
-          return particleGenerator.newFireParticle();
-        }
-        return particle;
-      });
-      if(!shown){
-        shown = true;
-        regenerateParticles();
+   particles = _.compact(particles.map(function(particle){
+      particle.update(dt);
+      if(particle.dying && particle.remaining_life <= 0){
+        return null;
       }
-   }
- 
 
+      if(particle.pos.x > -30  && particle.pos.x < window.innerWidth + 30 
+        && particle.pos.y > -30 && particle.pos.y < window.innerHeight + 30){
+        return particle;
+      }else if(!particlesDying){
+        //Play sound particle
+        return particleGenerator.newParticle(color);
+      }
+    }));
+ 
   if(particles.length == 0){
-    regenerateParticles();
+    getBlueParticles();
   }
 }
 
-function updateTexts(dt){
-  texts = _.compact(texts.map(function(text){
-    text.update(dt);
-    if(text.pos.y + text.getTextHeight() > 0 ){
-      return text;
-    }else{
-      textGenerator.prepareNewText();
-    }
+function updateBirds(dt){
+
+  birdsGenerator.updatePackOfBirds(birds, ctx2, [player.getEntity()]);
+
+  birds = _.compact(birds.map(function(bird){
+    bird.update(dt);
+    return bird;
   }));
 }
 
 function clear(){
-  ctx.globalCompositeOperation = "source-over";
-  ctx.canvas.width = window.innerWidth;
-  ctx.canvas.height = window.innerHeight;
-  var gradient = ctx.createLinearGradient(canvas.width, canvas.height,0, 0);
-  /*gradient.addColorStop(0, "rgb(84, 141, 189)");
-  gradient.addColorStop(1, "rgb(99, 64, 113)");
-  ctx.fillStyle = gradient;*/
+  ctx2.globalCompositeOperation = "source-over";
 
-  //var gradient = context.createLinearGradient(114, 387, 0, 0);
-  gradient.addColorStop(1, "rgb(33, 45, 166)");
-  gradient.addColorStop(0, "rgb(0, 0, 0)");
-  ctx.fillStyle = gradient;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  var gradient = ctx.createLinearGradient(canvas.width, canvas.height,0, 0);
+ 
+  gradient.addColorStop(0, "rgb(84, 141, 189)");
+  gradient.addColorStop(1, "rgb(99, 64, 113)");
+  //ctx.fillStyle = 'rgba(255, 255, 255, 0.44)';
+  //ctx2.globalCompositeOperation = "lighter";
+  ctx2.fillStyle = 'rgba(255, 255, 255, 0.44)';
     
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.globalCompositeOperation = "lighter";
+  ctx2.fillRect(0, 0, canvas.width, canvas.height);
 
 }
 
@@ -118,9 +106,11 @@ function render(){
     particle.render(ctx);
   });
 
-  /*texts.forEach(function(text){
-    text.render(ctx);
-  });*/
+  birds.forEach(function(bird){
+    bird.render(ctx2);
+  });
+
+  player.render(ctx2);
 }
 
 function changeAnimation(anim){
@@ -132,35 +122,6 @@ function changeAnimation(anim){
   particlesGenerationStep = anim;
 }
 
-function regenerateParticles(){
-  particlesDying = false;
-  switch(particlesGenerationStep){
-    case 'red':
-      getRedParticles();
-    break;
-    case 'green':
-     getGreenParticles();
-    break;
-    case 'brown':
-      getBrownParticles();
-    break;
-    case 'blue':
-      getBlueParticles();
-    break;
-    case 'yellow':
-      color = {r:248,g:235,b:79};
-      particles = particleGenerator.getColorParticles(color, 20,0);
-    break;
-    case 'white':
-      color = {r:255,g:255,b:255};
-      particles = particleGenerator.getColorParticles(color, 20,0);
-    break;
-    case 'default':
-      color = null;
-      particles = particleGenerator.getColorParticles(color, 20,0);
-    break;
-  }
-}
 
 function  getRedParticles(){
   color = {r:255,g:0,b:0};
@@ -181,4 +142,11 @@ function  getBlueParticles(){
 
 $(document).ready(function(){
   start();
+
+  $(window).on('resize', function(){
+    ctx.canvas.width = window.innerWidth;
+    ctx.canvas.height = window.innerHeight;
+    ctx2.canvas.width = window.innerWidth;
+    ctx2.canvas.height = window.innerHeight;
+  })
 });

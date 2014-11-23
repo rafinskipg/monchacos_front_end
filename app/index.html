@@ -37,17 +37,19 @@
         </header>
         <div class="container mainContainer" >
             <canvas id="canvas"></canvas>
-            <div class="col-md-3">
+            <canvas id="canvas2"></canvas>
+            
+            <div class="col-md-9 container-fluid content">
+                <section id="main">
+                    <div ng-view class="row"></div>
+                </section>
+            </div>
+            <div class="col-md-3 content">
                 <ul class="menu">
                     <li ng-repeat="link in mainMenu">
                         <a  href="{{link.src}}" target="{{link.target}}"><span class="{{link.class}}"></span>{{link.title}}</a>
                     </li>
                 </ul>
-            </div>
-            <div class="col-md-9 container-fluid">
-                <section id="main">
-                    <div ng-view class="row"></div>
-                </section>
             </div>
         </div>
     </body>
