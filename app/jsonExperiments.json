@@ -1,5 +1,26 @@
 [
 {
+  "name": "WebRTC Boilerplate",
+  "description":"A WebRTC application that lists users using socket.io, renders with ReactJS and uses webRTC for online p2p calls",
+  "url": "https://github.com/rafinskipg/freetalk",
+  "image" :"freetalk.png"
+  },{
+  "name": "Git changelog",
+  "description":"A grunt plugin for changelog generation based on commit messages",
+    "url": "https://npmjs.org/package/git-changelog",
+  "image" :"grunt.jpg"
+  },
+  {
+  "name": "Birds Flocking simulator",
+  "description":"A flocking simulator for birds",
+    "url": "http://rvpg.me/experiments/flocking/",
+  "image" :"birds.png"
+  },{
+  "name": "The cooldog adventures",
+  "description":"A game of a cool dog =') ",
+    "url": "https://github.com/VenturaStudios/Chapter1_LostInSpace",
+  "image" :"cooldog.png"
+  },{
   "name": "Lineman Redesign",
   "description":"FrontEnd of the linemanJS site",
     "url": "http://linemanjs.com/",
@@ -10,11 +31,6 @@
  "url": "http://gitella.herokuapp.com/",
   "image" :"gitella.png"
 },{
-  "name": "Git changelog",
-  "description":"A grunt plugin for changelog generation based on commit messages",
-    "url": "https://npmjs.org/package/git-changelog",
-  "image" :"grunt.jpg"
-  },{
   "name": "Game of life",
   "description":"A map agnostic implementation wit tdd",
   "url": "http://rvpg.me/experiments/gameoflife/",

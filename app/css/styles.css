@@ -431,3 +431,22 @@ img ,.modal img{
     max-width :100%;
     padding-bottom: 20px;
 }
+
+
+#experiments{
+    background: rgba(255, 255, 255, 0.84);
+}
+
+.experiment{
+    transition: all 0.4s linear;
+    
+}
+.experiment:hover{
+    background: rgba(0, 0, 0, 0.92);
+}
+
+.experiment img{
+    border-radius: 100px;
+    height: 100px;
+    width: 100px;
+}
