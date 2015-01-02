@@ -41,24 +41,19 @@
 
         <div class="container mainContainer" >
             
-            <div class="col-xs-12 intro">
-                <a href="#hire">
-                    <span class="text-intro">Available for development of prototypes, pet projects or consulting</span>
-                </a>
-            </div>
-
-            <div class="col-md-9 container-fluid content">
-                <section id="main">
-                    <div ng-view class="row"></div>
-                </section>
-            </div>
-            <div class="col-md-3 content">
+            <!--<div class="col-xs-12 content">
                 <ul class="menu">
                     <li ng-repeat="link in mainMenu">
                         <a  href="{{link.src}}" target="{{link.target}}"><span class="{{link.class}}"></span>{{link.title}}</a>
                     </li>
                 </ul>
+            </div>-->
+            <div class="col-xs-12 container-fluid content">
+                <section id="main">
+                    <div ng-view class="row"></div>
+                </section>
             </div>
+            
         </div>
     </body>
 
