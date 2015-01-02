@@ -424,9 +424,9 @@ var song, then, now, canvas,ctx, canvas2, ctx2, shown,  particlesGenerationStep,
 
 function start(){
   particlesGenerationStep = 'white'
-  birds = birdsGenerator.getPackOfBirds(window.innerWidth, window.innerHeight);
+  birds = birdsGenerator.getPackOfBirds(window.innerWidth, window.innerHeight, 15);
   player.initialize();
-  getBlueParticles();
+  //getBlueParticles();
   launchCanvas();
 }
 
@@ -461,7 +461,7 @@ var loop = function loop(){
 
 function update(dt){
   var newDt = dt/1000;
-  updateBackgrounds(newDt);
+  //updateBackgrounds(newDt);
   updateBirds(newDt);
   player.update(newDt);
 }
@@ -516,9 +516,9 @@ function clear(){
 
 function render(){
 
-  particles.forEach(function(particle){
+  /*particles.forEach(function(particle){
     particle.render(ctx);
-  });
+  });*/
 
   birds.forEach(function(bird){
     bird.render(ctx2);
@@ -750,10 +750,9 @@ function newBird(x,y){
   });
 }
 
-function getPackOfBirds(limitWidth, limitHeight){
+function getPackOfBirds(limitWidth, limitHeight, amount){
   var screenFactor = (window.innerWidth / window.innerHeight);
   var lower = window.innerWidth < window.innerHeight ? window.innerWidth : window.innerHeight;
-  var amount = Math.round((lower * screenFactor )/10);
   var randomLeaderIndex = utils.random(0, amount - 1);
 
   var pack = [];

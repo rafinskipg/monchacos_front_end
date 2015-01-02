@@ -14,10 +14,9 @@ function newBird(x,y){
   });
 }
 
-function getPackOfBirds(limitWidth, limitHeight){
+function getPackOfBirds(limitWidth, limitHeight, amount){
   var screenFactor = (window.innerWidth / window.innerHeight);
   var lower = window.innerWidth < window.innerHeight ? window.innerWidth : window.innerHeight;
-  var amount = Math.round((lower * screenFactor )/10);
   var randomLeaderIndex = utils.random(0, amount - 1);
 
   var pack = [];

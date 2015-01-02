@@ -2,7 +2,7 @@
 <html lang="en" ng-app="monchacos" ng-controller="mainCtrl" >
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>RVPG</title>
+        <title>Rafa in cyberspace</title>
         <link rel="icon" 
           type="image/png" 
           href="favicon.png">
@@ -21,10 +21,13 @@
     </head>
 
     <body class="container-fluid">
+        <canvas id="canvas"></canvas>
+        <canvas id="canvas2"></canvas>
+        
         <header>
             <div class="row">
                 <div class="col-xs-2 hidden-xs">
-                     <img src="img/logo.png" > 
+                    <a href="#"><img src="img/logo.png" ></a>
                 </div>
                 <div class="col-sm-10">
                     <ul class="menu" ngCloak>
@@ -35,10 +38,15 @@
                 </div>
             </div>
         </header>
+
         <div class="container mainContainer" >
-            <canvas id="canvas"></canvas>
-            <canvas id="canvas2"></canvas>
             
+            <div class="col-xs-12 intro">
+                <a href="#hire">
+                    <span class="text-intro">Available for development of prototypes, pet projects or consulting</span>
+                </a>
+            </div>
+
             <div class="col-md-9 container-fluid content">
                 <section id="main">
                     <div ng-view class="row"></div>
